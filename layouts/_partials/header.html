@@ -20,7 +20,16 @@
           <span class="brand__tag label-sm">{{ site.Params.tagline }}</span>
         </span>
       </a>
-      <nav class="nav" aria-label="{{ T "primary_nav" }}">
+      <div class="masthead__tools">
+        <div class="masthead__lang">{{ partial "lang-switch.html" . }}</div>
+        <button class="theme-toggle" type="button" data-theme-toggle aria-label="{{ T "toggle_theme" }}" title="{{ T "invert" }}">
+          <span aria-hidden="true">◐</span>
+        </button>
+        <button class="nav-toggle" type="button" data-nav-toggle aria-expanded="false" aria-controls="primary-nav" aria-label="{{ T "menu" }}">
+          <span class="nav-toggle__bars" aria-hidden="true"><i></i><i></i><i></i></span>
+        </button>
+      </div>
+      <nav class="nav" id="primary-nav" aria-label="{{ T "primary_nav" }}">
         {{- $p := . }}
         {{- range site.Menus.main }}
         {{- $active := or ($p.IsMenuCurrent "main" .) ($p.HasMenuCurrent "main" .) }}
@@ -28,13 +37,8 @@
         {{- if .Params.rss }}{{ with site.Home.OutputFormats.Get "rss" }}{{ $url = .RelPermalink }}{{ end }}{{ end }}
         <a class="nav__link{{ with .Params.class }} {{ . }}{{ end }}" href="{{ $url }}"{{ if $active }} aria-current="page"{{ end }}>{{ .Name }}</a>
         {{- end }}
+        <div class="nav__lang label-sm"><span>{{ T "language" }}</span>{{ partial "lang-switch.html" . }}</div>
       </nav>
-      <div class="masthead__tools">
-        {{ partial "lang-switch.html" . }}
-        <button class="theme-toggle" type="button" data-theme-toggle aria-label="{{ T "toggle_theme" }}" title="{{ T "invert" }}">
-          <span aria-hidden="true">◐</span>
-        </button>
-      </div>
     </div>
   </div>
 </header>

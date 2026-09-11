@@ -16,6 +16,22 @@
     });
   });
 
+  var masthead = document.querySelector('.masthead');
+  var navToggle = document.querySelector('[data-nav-toggle]');
+  function setNav(open) {
+    if (!masthead || !navToggle) return;
+    masthead.classList.toggle('is-open', open);
+    navToggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+  }
+  if (navToggle) {
+    navToggle.addEventListener('click', function () {
+      setNav(navToggle.getAttribute('aria-expanded') !== 'true');
+    });
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape' && masthead.classList.contains('is-open')) { setNav(false); navToggle.focus(); }
+    });
+  }
+
   document.querySelectorAll('[data-copy]').forEach(function (btn) {
     btn.addEventListener('click', function () {
       var src = document.getElementById(btn.getAttribute('data-copy'));

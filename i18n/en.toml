@@ -206,3 +206,6 @@ other = "{{ . }} categories"
 [count_tags]
 one = "{{ . }} tag"
 other = "{{ . }} tags"
+
+[menu]
+other = "Menu"
