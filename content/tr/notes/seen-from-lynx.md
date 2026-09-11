@@ -13,5 +13,5 @@ Bu sayfayı Lynx’te açın ve şunu görün: bir satır metin olarak künye, n
 Kabul testi budur. Bir bildiri terminalde okunamıyorsa yanlış olan bildiridir, terminal değil.
 
 ```sh
-lynx -dump https://bumnote.org/tr/ | head -20
+lynx -dump https://bumnote.com/tr/ | head -20
 ```

@@ -12,7 +12,7 @@ teaser:
   kind: code
   lines:
     - "// %0 JavaScript istemci çalışma zamanı"
-    - "$ curl -sSL https://bumnote.org/tr/about/index.md"
+    - "$ curl -sSL https://bumnote.com/tr/about/index.md"
     - "> Metin özgür doğdu; ama her yerde"
     - "> JavaScript zincirlerinde."
 cover:

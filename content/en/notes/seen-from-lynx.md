@@ -12,5 +12,5 @@ Open this page in Lynx and you get: the masthead as a line of text, the navigati
 That is the acceptance test. If a dispatch is unreadable in a terminal, the dispatch is wrong, not the terminal.
 
 ```sh
-lynx -dump https://bumnote.org/ | head -20
+lynx -dump https://bumnote.com/ | head -20
 ```

@@ -12,6 +12,13 @@ hugo server -D
 
 Then open <http://localhost:1313/>. Build for production with `hugo --minify`; output lands in `public/`.
 
+## Deploy
+
+Every push to `main` runs `.github/workflows/hugo.yml`, which builds the site with Hugo extended and publishes
+it to GitHub Pages at <https://bumnote.com/>. The workflow takes its base URL from the Pages settings, so the
+custom domain is configured there (Settings → Pages → Custom domain), not in a `CNAME` file. DNS for the apex
+points at GitHub's four A records; `www` is a CNAME to `kkadir.github.io`.
+
 ## Where things live
 
 | Path | What |

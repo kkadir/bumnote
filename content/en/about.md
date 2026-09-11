@@ -28,4 +28,4 @@ The name comes from the Miles Davis line about wrong notes. A bum note is not a 
 
 ## Contact
 
-Post: bumnote press, c/o the basement. Wire: `desk@bumnote.org`. We answer letters faster than email, because letters are rarer.
+Post: bumnote press, c/o the basement. Wire: `desk@bumnote.com`. We answer letters faster than email, because letters are rarer.

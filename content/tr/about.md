@@ -29,4 +29,4 @@ Adı Miles Davis’in yanlış notalar hakkındaki sözünden gelir. Bir “bum 
 
 ## İletişim
 
-Posta: bumnote basımevi, bodrum katı eliyle. Tel: `desk@bumnote.org`. Mektuplara e-postadan hızlı cevap veririz, çünkü mektup daha nadirdir.
+Posta: bumnote basımevi, bodrum katı eliyle. Tel: `desk@bumnote.com`. Mektuplara e-postadan hızlı cevap veririz, çünkü mektup daha nadirdir.

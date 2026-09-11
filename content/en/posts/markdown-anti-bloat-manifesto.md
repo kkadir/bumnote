@@ -11,7 +11,7 @@ teaser:
   kind: code
   lines:
     - "// 0% JavaScript client runtime"
-    - "$ curl -sSL https://bumnote.org/about/index.md"
+    - "$ curl -sSL https://bumnote.com/about/index.md"
     - "> Text was born free; yet everywhere"
     - "> it is in JavaScript chains."
 cover:

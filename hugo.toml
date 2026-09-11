@@ -1,4 +1,4 @@
-baseURL = 'https://kkadir.github.io/bumnote/'
+baseURL = 'https://bumnote.com/'
 defaultContentLanguage = 'en'
 defaultContentLanguageInSubdir = false
 enableRobotsTXT = true
@@ -60,7 +60,7 @@ removePathAccents = true
         title = 'Craving tangible ink on woodpulp?'
         text = 'Order physical risograph folios, cassette split tapes, and mail-art zines shipped directly in brown craft mailers.'
         cta = 'Browse zines & prints catalog'
-        email = 'orders@bumnote.org'
+        email = 'orders@bumnote.com'
 
       [languages.en.params.newsletter]
         title = 'The Bootleg Dispatch'
@@ -155,7 +155,7 @@ removePathAccents = true
         title = 'Odun hamuru üzerinde elle tutulur mürekkep mi istiyorsunuz?'
         text = 'Fiziksel risograf folyoları, split kasetler ve posta sanatı fanzinleri doğrudan kahverengi kraft zarflarla kapınıza gelsin.'
         cta = 'Fanzin & baskı kataloğuna göz at'
-        email = 'orders@bumnote.org'
+        email = 'orders@bumnote.com'
 
       [languages.tr.params.newsletter]
         title = 'Korsan Bildiri'
