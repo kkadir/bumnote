@@ -1,0 +1,47 @@
+<footer class="footer">
+  <div class="wrap">
+    <div class="footer__grid">
+      <div class="footer__brand">
+        <div class="footer__brandrow">
+          <span class="brand__name">{{ site.Title }}</span>
+          <span class="tag">{{ T "press_folio" }}</span>
+        </div>
+        <p class="body-sm">{{ site.Params.description }}</p>
+        <p class="label-sm footer__built">{{ T "built_with" }}<br><span class="ink-signal">{{ T "high_fidelity" }}</span></p>
+      </div>
+      <div class="footer__news">
+        {{- with site.Params.newsletter }}
+        <h2 class="label-md footer__h">{{ .title }}</h2>
+        <p class="body-sm">{{ .text }}</p>
+        <form class="newsletter"{{ with .action }} action="{{ . }}" method="post"{{ end }}>
+          <label class="visually-hidden" for="nl-email">{{ T "email_address" }}</label>
+          <input class="input" id="nl-email" type="email" name="email" placeholder="{{ .placeholder }}" required>
+          <button class="btn btn--sm" type="submit">{{ T "subscribe" }}</button>
+        </form>
+        {{- end }}
+      </div>
+      <div class="footer__col">
+        <h2 class="label-md footer__h">{{ T "categories" }}</h2>
+        <ul class="footer__list label-sm">
+          {{- range $i, $t := site.Taxonomies.categories.ByCount }}
+          <li><a href="{{ $t.Page.RelPermalink }}"><span class="idx">[{{ printf "%02d" (add $i 1) }}]</span> {{ $t.Page.LinkTitle }}</a></li>
+          {{- end }}
+        </ul>
+      </div>
+      <div class="footer__col">
+        <h2 class="label-md footer__h">{{ T "channels" }}</h2>
+        <ul class="footer__list label-sm">
+          {{- range site.Menus.channels }}
+          {{- $url := .URL }}
+          {{- if .Params.rss }}{{ with site.Home.OutputFormats.Get "rss" }}{{ $url = .RelPermalink }}{{ end }}{{ end }}
+          <li><a href="{{ $url }}">{{ .Name }}</a></li>
+          {{- end }}
+        </ul>
+      </div>
+    </div>
+    <div class="footer__bar label-sm">
+      <span>{{ site.Copyright }}</span>
+      <a class="footer__top" href="#top">{{ T "back_to_top" }} ↑</a>
+    </div>
+  </div>
+</footer>

@@ -1,0 +1,66 @@
+en:
+  items:
+    - title: "Tape Head Cults"
+      kind: "Pamphlet 09"
+      desc: "Twenty-four pages on azimuth, alignment, and the small religious communities that form around a well-maintained cassette deck."
+      price: "£4"
+      edition: "300 numbered • 70gsm newsprint"
+      soldout: true
+      specs: [{ k: "Format", v: "A5, saddle-stitched" }, { k: "Print", v: "Photocopy, one colour" }]
+    - title: "The Detonated Fifth"
+      kind: "Folio 07"
+      desc: "The lead essay from Issue 42 with the full session log, printed as a two-colour risograph foldout."
+      price: "£8"
+      edition: "200 numbered • Riso, black + orange"
+      specs: [{ k: "Format", v: "A3 folded to A5" }, { k: "Stock", v: "Munken 100gsm" }]
+    - title: "Azimuth Bleed"
+      kind: "Split cassette"
+      desc: "C-30. One side of the Tascam 244 alignment session, one side of what happened after we stopped aligning it."
+      price: "£6"
+      edition: "100 • Type II chrome, hand-dubbed"
+      specs: [{ k: "Length", v: "2 × 15 min" }, { k: "Insert", v: "J-card, hand-numbered" }]
+    - title: "Text Was Born Free"
+      kind: "Poster"
+      desc: "Two-colour screenprint of the manifesto line, set in Bricolage Grotesque at 400pt. For copy shops and server rooms."
+      price: "£14"
+      edition: "50 • Screenprint, signed"
+      specs: [{ k: "Size", v: "A2" }, { k: "Stock", v: "Kraft 170gsm" }]
+    - title: "Back Issues 31–41"
+      kind: "Bundle"
+      desc: "Eleven issues of the broadsheet, some water-damaged, all complete. The water damage is free."
+      price: "£22"
+      edition: "While they last"
+      specs: [{ k: "Format", v: "Tabloid, folded" }, { k: "Condition", v: "Read" }]
+tr:
+  items:
+    - title: "Bant Kafası Tarikatları"
+      kind: "Broşür 09"
+      desc: "Azimut, hizalama ve iyi bakılmış bir kaset çaların etrafında oluşan küçük dinî topluluklar üzerine yirmi dört sayfa."
+      price: "£4"
+      edition: "300 numaralı • 70 gr gazete kâğıdı"
+      soldout: true
+      specs: [{ k: "Format", v: "A5, tel dikiş" }, { k: "Baskı", v: "Fotokopi, tek renk" }]
+    - title: "Patlatılmış Beşli"
+      kind: "Folyo 07"
+      desc: "42. Sayı’nın baş denemesi, tam seans kaydıyla birlikte iki renkli risograf katlamalı olarak basıldı."
+      price: "£8"
+      edition: "200 numaralı • Riso, siyah + turuncu"
+      specs: [{ k: "Format", v: "A3, A5’e katlanmış" }, { k: "Kâğıt", v: "Munken 100 gr" }]
+    - title: "Azimut Sızıntısı"
+      kind: "Split kaset"
+      desc: "C-30. Bir yüzde Tascam 244 hizalama seansı, diğer yüzde hizalamayı bıraktıktan sonra olanlar."
+      price: "£6"
+      edition: "100 • Tip II krom, elle kopyalanmış"
+      specs: [{ k: "Süre", v: "2 × 15 dk" }, { k: "Kapak", v: "J-kart, elle numaralı" }]
+    - title: "Metin Özgür Doğdu"
+      kind: "Poster"
+      desc: "Manifesto cümlesinin 400 puntoluk Bricolage Grotesque ile iki renkli serigrafisi. Fotokopiciler ve sunucu odaları için."
+      price: "£14"
+      edition: "50 • Serigrafi, imzalı"
+      specs: [{ k: "Boyut", v: "A2" }, { k: "Kâğıt", v: "Kraft 170 gr" }]
+    - title: "Eski Sayılar 31–41"
+      kind: "Paket"
+      desc: "Gazetenin on bir sayısı, bazıları su almış, hepsi eksiksiz. Su hasarı bedava."
+      price: "£22"
+      edition: "Stoklar tükenene kadar"
+      specs: [{ k: "Format", v: "Tabloid, katlanmış" }, { k: "Durum", v: "Okunmuş" }]

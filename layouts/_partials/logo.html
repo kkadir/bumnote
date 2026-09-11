@@ -1,0 +1,4 @@
+{{- with resources.Get "img/bumnote-logo.png" }}
+{{- $s1 := .Resize "192x192 png q90" }}{{ $s2 := .Resize "384x384 png q90" }}
+<img class="brand__logo" src="{{ $s1.RelPermalink }}" srcset="{{ $s1.RelPermalink }} 1x, {{ $s2.RelPermalink }} 2x" width="96" height="96" alt="" decoding="async">
+{{- end }}

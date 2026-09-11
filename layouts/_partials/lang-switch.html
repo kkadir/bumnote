@@ -1,0 +1,11 @@
+{{- $p := . }}
+<nav class="lang" aria-label="{{ T "language" }}">
+  {{- range hugo.Sites }}
+  {{- $s := . }}
+  {{- $current := eq .Language.Lang site.Language.Lang }}
+  {{- $url := $s.Home.RelPermalink }}
+  {{- if $current }}{{ $url = $p.RelPermalink }}
+  {{- else }}{{ range $p.Translations }}{{ if eq .Language.Lang $s.Language.Lang }}{{ $url = .RelPermalink }}{{ end }}{{ end }}{{ end }}
+  <a class="lang__link" href="{{ $url }}" hreflang="{{ .Language.Lang }}" lang="{{ .Language.Lang }}" title="{{ .Language.LanguageName }}"{{ if $current }} aria-current="true"{{ end }}>{{ .Language.Lang | upper }}</a>
+  {{- end }}
+</nav>

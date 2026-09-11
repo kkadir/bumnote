@@ -1,0 +1,14 @@
+en:
+  archive: { url: /notes/, label: "Archive →" }
+  items:
+    - { artist: "Sonic Youth", record: "Bad Moon Rising [LP]", format: "A-side" }
+    - { artist: "Albert Ayler", record: "Spiritual Unity [ESP-Disk]", format: "Mono" }
+    - { artist: "This Heat", record: "Deceit [Rough Trade]", format: "Re-cut" }
+    - { artist: "Cabaret Voltaire", record: "Mix-Up [Industrial Rec.]", format: "Cassette" }
+tr:
+  archive: { url: /tr/notes/, label: "Arşiv →" }
+  items:
+    - { artist: "Sonic Youth", record: "Bad Moon Rising [LP]", format: "A yüzü" }
+    - { artist: "Albert Ayler", record: "Spiritual Unity [ESP-Disk]", format: "Mono" }
+    - { artist: "This Heat", record: "Deceit [Rough Trade]", format: "Yeni kesim" }
+    - { artist: "Cabaret Voltaire", record: "Mix-Up [Industrial Rec.]", format: "Kaset" }

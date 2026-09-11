@@ -1,0 +1,5 @@
+{{- $t := .Title -}}
+{{- with .Params.titleHighlight -}}
+{{- $t = replace $t . (printf `<span class="hl">%s</span>` .) -}}
+{{- end -}}
+{{- $t | safeHTML -}}

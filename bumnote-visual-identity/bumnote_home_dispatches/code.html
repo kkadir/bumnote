@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;700;800&amp;family=Literata:ital,opsz,wght@0,7..72,400;0,7..72,600;1,7..72,400&amp;family=Space+Mono:ital,wght@0,400;0,700;1,400&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = {"darkMode":"class","theme":{"extend":{"colors":{"on-tertiary-container":"#f7fff1","surface-dim":"#dcd9dd","surface-container-low":"#f6f2f7","on-secondary-fixed":"#2f1500","primary-container":"#d53e02","tertiary-fixed":"#a3f69c","secondary":"#904d00","surface-variant":"#e4e1e6","on-primary-container":"#fffbff","on-tertiary-fixed-variant":"#005312","primary":"#ab2f00","surface-tint":"#af3100","inverse-surface":"#303033","primary-fixed":"#ffdbd1","on-secondary-fixed-variant":"#6e3900","on-primary-fixed-variant":"#862300","on-surface-variant":"#5b4139","on-error-container":"#93000a","surface-container":"#f0edf1","tertiary":"#186a22","on-primary":"#ffffff","surface-container-highest":"#e4e1e6","on-error":"#ffffff","secondary-fixed":"#ffdcc3","secondary-container":"#fe932c","primary-fixed-dim":"#ffb59f","on-surface":"#1b1b1e","tertiary-container":"#358438","inverse-on-surface":"#f3f0f4","secondary-fixed-dim":"#ffb77d","on-tertiary-fixed":"#002204","surface-container-high":"#eae7eb","on-primary-fixed":"#3a0a00","background":"#fbf8fc","on-secondary":"#ffffff","surface-bright":"#fbf8fc","on-secondary-container":"#663500","surface-container-lowest":"#ffffff","tertiary-fixed-dim":"#88d982","inverse-primary":"#ffb59f","error-container":"#ffdad6","outline":"#8f7067","surface":"#fbf8fc","on-tertiary":"#ffffff","outline-variant":"#e4beb4","on-background":"#1b1b1e","error":"#ba1a1a"},"borderRadius":{"DEFAULT":"0.25rem","lg":"0.5rem","xl":"0.75rem","full":"9999px"},"spacing":{"space-2xl":"3rem","space-4xl":"6rem","space-sm":"0.75rem","container-wide":"1280px","gutter-desktop":"2.5rem","space-3xl":"4.5rem","container-narrow":"680px","space-xs":"0.5rem","container-standard":"1040px","space-xxs":"0.25rem","space-lg":"1.5rem","gutter-mobile":"1.25rem","space-xl":"2rem","space-md":"1rem"},"fontFamily":{"display-md":["Bricolage Grotesque"],"headline-md":["Bricolage Grotesque"],"body-lg":["Literata"],"label-lg":["Space Mono"],"body-md":["Literata"],"label-sm":["Space Mono"],"headline-sm":["Bricolage Grotesque"],"display-lg-mobile":["Bricolage Grotesque"],"label-md":["Space Mono"],"body-sm":["Literata"],"display-md-mobile":["Bricolage Grotesque"],"display-lg":["Bricolage Grotesque"],"headline-lg":["Bricolage Grotesque"]},"fontSize":{"display-md":["40px",{"lineHeight":"46px","letterSpacing":"-0.02em","fontWeight":"700"}],"headline-md":["22px",{"lineHeight":"28px","letterSpacing":"-0.005em","fontWeight":"600"}],"body-lg":["20px",{"lineHeight":"32px","letterSpacing":"-0.005em","fontWeight":"400"}],"label-lg":["13px",{"lineHeight":"18px","letterSpacing":"0.06em","fontWeight":"700"}],"body-md":["17px",{"lineHeight":"28px","letterSpacing":"0em","fontWeight":"400"}],"label-sm":["10px",{"lineHeight":"14px","letterSpacing":"0.1em","fontWeight":"400"}],"headline-sm":["18px",{"lineHeight":"24px","letterSpacing":"0em","fontWeight":"600"}],"display-lg-mobile":["38px",{"lineHeight":"42px","letterSpacing":"-0.02em","fontWeight":"800"}],"label-md":["11px",{"lineHeight":"16px","letterSpacing":"0.08em","fontWeight":"700"}],"body-sm":["14px",{"lineHeight":"22px","letterSpacing":"0em","fontWeight":"400"}],"display-md-mobile":["30px",{"lineHeight":"36px","letterSpacing":"-0.015em","fontWeight":"700"}],"display-lg":["56px",{"lineHeight":"60px","letterSpacing":"-0.03em","fontWeight":"800"}],"headline-lg":["28px",{"lineHeight":"34px","letterSpacing":"-0.01em","fontWeight":"700"}]}}}}</script></head><body class="bg-surface font-body-md text-body-md text-on-surface antialiased min-h-screen selection:bg-primary-container selection:text-on-primary-container"><header class="fixed top-0 left-0 right-0 z-50 bg-surface/95 backdrop-blur-md shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="h-28 max-w-[1280px] mx-auto px-gutter-desktop flex flex-col justify-between py-space-xs"><div class="flex items-center justify-between text-on-surface-variant font-label-sm text-label-sm border-b border-outline-variant/40 pb-space-xxs"><div class="flex items-center gap-space-sm"><span>ISSUE NO. 42</span><span>•</span><span class="hidden sm:inline">DISPATCHES FROM THE UNDERGROUND</span><span>•</span><span>EST. 1974</span><span>•</span><span class="text-primary font-bold">STATIC RSS READY</span></div><div class="flex items-center gap-space-md font-label-sm text-label-sm"><span class="hidden md:inline">FOLIO: PRINT ARCHIVE ED.</span><span class="bg-secondary-container text-on-secondary-container px-space-xs py-space-xxs rounded uppercase font-bold tracking-wider">RAW • UNFILTERED</span></div></div><div class="flex items-center justify-between gap-space-md pt-space-xxs"><div class="flex items-center gap-space-md"><img alt="In https://lh3.googleusercontent.com/aida/AEtjO1WRH1HWhU92JpUrGa5NBi5hM7v0SZZzgM2CUDyKoYO9s67qfnsVkJGNm6wrS_OoZvMWY7mcH6c_bexpGzC-NGnpZVyZeLCCmXgkHUtvSLjCy8k6o9TGPAI-KyFAhdOBtj9yM2Q2swQ8z3KydLMEDGUxyfGNCfbw3WAs5x-HYD81xm1scxRWbSl5-_-H6A0mY8J84CTGx0ygSn6Xwg0N-NuEM6wikXUjv7jIyPOTRi1zFjFcZSRSJrbq9F7X, clean up and refine the outer black circular frame/ring so that it is completely smooth, crisp, solid, and geometrically clean—not weathered, distressed, jagged, rough, or tethered. Make the outer circular black border have clean, sharp, uniform circular outlines without distressed grunge texture or rough eroded edges. Keep everything else inside identical: the central orange circle, the white concentric ring, the stylized bum buttocks musical note emblem, and the graffiti wordmark 'bumnote' with its orange fill, white highlight, and bold black outline." class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1WRH1HWhU92JpUrGa5NBi5hM7v0SZZzgM2CUDyKoYO9s67qfnsVkJGNm6wrS_OoZvMWY7mcH6c_bexpGzC-NGnpZVyZeLCCmXgkHUtvSLjCy8k6o9TGPAI-KyFAhdOBtj9yM2Q2swQ8z3KydLMEDGUxyfGNCfbw3WAs5x-HYD81xm1scxRWbSl5-_-H6A0mY8J84CTGx0ygSn6Xwg0N-NuEM6wikXUjv7jIyPOTRi1zFjFcZSRSJrbq9F7X"/><div class="flex flex-col"><span class="font-headline-lg text-headline-lg text-on-surface uppercase tracking-tight leading-none">bumnote</span><span class="font-label-sm text-label-sm text-on-surface-variant tracking-wider hidden lg:block">Irreverent Essays, Counter-Notes &amp; Sonic Curiosities</span></div></div><nav class="flex items-center gap-space-xs font-label-md text-label-md uppercase tracking-wider" data-active-classes="bg-primary text-on-primary font-bold shadow-[2px_2px_0px_#1b1b1e]"><a aria-current="page" class="px-space-xs py-space-xxs transition-colors bg-primary text-on-primary font-bold shadow-[2px_2px_0px_#1b1b1e]" data-path="articles" href="#">Articles</a><a class="px-space-xs py-space-xxs text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-colors" data-path="dispatches-notes" href="#">Dispatches / Notes</a><a class="px-space-xs py-space-xxs text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-colors" data-path="zines-prints" href="#">Zines &amp; Prints</a><a class="px-space-xs py-space-xxs text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-colors" data-path="about-manifesto" href="#">About &amp; Manifesto</a><a class="px-space-xs py-space-xxs text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-colors" data-path="search" href="#">Search</a><a class="px-space-xs py-space-xxs bg-primary-container text-on-primary-container hover:bg-primary hover:text-on-primary font-bold flex items-center transition-colors" data-path="rss-feed" href="#">RSS</a></nav><div class="flex items-center gap-space-sm"><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></div></header><main class="w-full pt-28 bg-surface"><div class="flex flex-col w-full">
+<!-- Issue Ticker & Broadside Sub-Masthead -->
+<section class="w-full bg-surface-container-low py-space-sm px-gutter-desktop shadow-sm">
+<div class="max-w-[1280px] mx-auto flex flex-wrap items-center justify-between gap-space-md font-label-sm text-label-sm text-on-surface-variant">
+<div class="flex items-center gap-space-sm flex-wrap">
+<span class="bg-primary text-on-primary font-bold px-space-xs py-space-xxs rounded-none uppercase tracking-widest text-[9px] shadow-[2px_2px_0px_#1b1b1e]">SPECIAL FOLIO</span>
+<span class="text-on-surface font-semibold">ISSUE 42 / AUTUMN ROTATION</span>
+<span class="text-outline-variant">•</span>
+<span class="hidden md:inline">FREQUENCY: FORTNIGHTLY STATIC BATCH</span>
+<span class="text-outline-variant hidden md:inline">•</span>
+<span class="text-primary font-bold">100% STATIC MARKDOWN</span>
+</div>
+<div class="flex items-center gap-space-sm">
+<span class="text-on-surface-variant uppercase font-bold tracking-wider">LATENCY:</span>
+<span class="bg-surface px-space-xs py-space-xxs text-primary font-bold shadow-sm">0.04s TTI</span>
+<span class="text-outline-variant">•</span>
+<span class="font-label-sm text-label-sm text-secondary font-bold">2.4 KB GZIPPED BASE</span>
+</div>
+</div>
+</section>
+<!-- Section 1: Lead Hero & Editor's Scratchpad -->
+<section class="max-w-[1280px] mx-auto w-full px-gutter-desktop pt-space-xl pb-space-2xl">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-xl items-start">
+<!-- Lead Feature Card (8 Columns) -->
+<article class="lg:col-span-8 bg-surface-container p-space-xl shadow-[4px_4px_0px_#1b1b1e] relative overflow-hidden transition-all duration-200 hover:-translate-y-0.5 hover:shadow-[6px_6px_0px_#1b1b1e]">
+<!-- Badge & Meta Ribbon -->
+<div class="flex flex-wrap items-center justify-between gap-space-sm pb-space-md">
+<div class="flex items-center gap-space-xs">
+<span class="bg-secondary-container text-on-secondary-container px-space-sm py-space-xxs font-label-md text-label-md uppercase tracking-wider font-bold shadow-[2px_2px_0px_#1b1b1e]">
+              ESSAY // ISSUE #42
+            </span>
+<span class="bg-surface text-primary font-label-sm text-label-sm px-space-xs py-space-xxs uppercase font-bold tracking-widest shadow-sm">
+              SOUND &amp; FURY
+            </span>
+</div>
+<div class="flex items-center gap-space-xs font-label-sm text-label-sm text-on-surface-variant">
+<span class="material-symbols-outlined text-[16px] text-primary">schedule</span>
+<span>OCT 18, 2024</span>
+<span>•</span>
+<span class="font-bold text-on-surface">7 MIN READ</span>
+</div>
+</div>
+<!-- Headline with high editorial contrast -->
+<h2 class="font-display-lg text-display-lg text-on-surface tracking-tight leading-[1.05] pb-space-md">
+          The Anatomy of a Wrong Note: <span class="text-primary underline decoration-secondary-container decoration-4 underline-offset-4">Why Imperfection</span> Drives Sonic Counterculture
+        </h2>
+<!-- Featured Media / Graphic Break -->
+<div class="relative w-full h-72 my-space-md overflow-hidden bg-surface-container-high shadow-[3px_3px_0px_#1b1b1e] group">
+<img class="w-full h-full object-cover object-center filter grayscale contrast-125 group-hover:scale-105 transition-transform duration-500" data-alt="High contrast 1970s underground newspaper photocopier collage featuring warped musical notations, distorted saxophone silhouettes, ripped tape fragments, rich warm off-white newsprint paper texture with bold black risograph ink and bright vibrant signal orange spray paint overlays." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCPEFoSp0h_iaCxznIzztz2iVGtQKT0OFJudR3l4Jl6BT3gponp7v2ttC4V_xNLZaZQOPCacNyy1qBmpChK44RCjAufkDRfM3rigV7u1y2e7xb4xphiIgoAsdrjN8m8MOp7QSKXjYm0k3vBbP5Hu6qcbdPKq3h0rn-YgQUC_BL2eozAMXxJHB9UcpYblhBVWrZ7TqIbXieIGR-3PRclHnch_aEiAYjMm_Uk6CCb9jCAdVTGWD-NfZFWbA"/>
+<div class="absolute bottom-space-xs left-space-xs bg-inverse-surface/90 text-inverse-on-surface px-space-sm py-space-xxs font-label-sm text-label-sm backdrop-blur-sm shadow-sm">
+            FIG. 01: RISOGRAPH PLATE // THE DETONATED 5TH CHORD
+          </div>
+<div class="absolute top-space-xs right-space-xs bg-primary text-on-primary font-label-sm text-label-sm px-space-xs py-space-xxs font-bold uppercase tracking-widest shadow-[2px_2px_0px_#1b1b1e]">
+            ANOMALY LOG: 94.2 Hz
+          </div>
+</div>
+<!-- Teaser Paragraph & Call to Action -->
+<p class="font-body-lg text-body-lg text-on-surface-variant pt-space-xs pb-space-lg leading-relaxed">
+          From Thelonious Monk’s deliberate clustered dissonances to the accidental magnetic tape drag on DIY punk four-tracks, the rogue frequency isn't an error—it's the only fracture where genuine human friction ruptures the sterile, quantized gloss of modern hyper-production.
+        </p>
+<div class="flex flex-wrap items-center justify-between gap-space-md pt-space-xs">
+<a class="inline-flex items-center gap-space-xs bg-on-surface text-surface px-space-lg py-space-sm font-label-md text-label-md uppercase tracking-wider font-bold shadow-[3px_3px_0px_#ab2f00] hover:bg-primary hover:text-on-primary transition-all" href="#">
+<span>Read Long-Form Article</span>
+<span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</a>
+<div class="flex items-center gap-space-sm font-label-sm text-label-sm text-on-surface-variant">
+<span>FILED UNDER:</span>
+<span class="bg-surface-container-highest text-on-surface px-space-xs py-space-xxs font-bold">#NOISE-ETHICS</span>
+<span class="bg-surface-container-highest text-on-surface px-space-xs py-space-xxs font-bold">#MICROTONES</span>
+</div>
+</div>
+</article>
+<!-- Side Rail: Scratchpad & Cassette Spins (4 Columns) -->
+<aside class="lg:col-span-4 flex flex-col gap-space-xl">
+<!-- Editor's Scratchpad -->
+<div class="bg-secondary-fixed text-on-secondary-fixed p-space-lg shadow-[4px_4px_0px_#1b1b1e] relative">
+<!-- Tactile Stamp Pin -->
+<div class="flex items-center justify-between pb-space-xs">
+<span class="bg-primary text-on-primary px-space-xs py-space-xxs font-label-sm text-label-sm font-bold uppercase tracking-widest shadow-[2px_2px_0px_#1b1b1e]">
+              MEMO • 042-B
+            </span>
+<span class="font-label-sm text-label-sm tracking-widest uppercase font-bold text-on-secondary-fixed-variant">
+              DESK SCRIBES
+            </span>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-secondary-fixed pt-space-xs pb-space-xs uppercase tracking-tight">
+            Editor's Scratchpad
+          </h3>
+<p class="font-body-sm text-body-sm text-on-secondary-fixed-variant pb-space-md leading-relaxed italic">
+            "We spent all Tuesday trying to align magnetic heads on a 1982 Tascam 244. The resulting azimuth bleed gave the drum fills a ghost shimmer no VST plugin could invent in a thousand years."
+          </p>
+<div class="bg-surface p-space-sm text-on-surface shadow-sm flex flex-col gap-space-xs">
+<div class="flex items-center justify-between font-label-sm text-label-sm">
+<span class="font-bold text-primary">// RECENT PHYSICAL RUN:</span>
+<span class="bg-surface-container-high px-space-xxs font-bold">SOLD OUT</span>
+</div>
+<p class="font-label-sm text-label-sm text-on-surface-variant">
+              Pamphlet 09 'Tape Head Cults' printed on 70gsm newsprint. 300 numbered copies dispatched via airmail.
+            </p>
+</div>
+</div>
+<!-- Recent Spins & Jams -->
+<div class="bg-surface-container p-space-lg shadow-[3px_3px_0px_#1b1b1e]">
+<div class="flex items-center justify-between pb-space-sm">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-primary text-[20px]">graphic_eq</span>
+<span class="font-headline-sm text-headline-sm text-on-surface uppercase tracking-tight">Recent Spins</span>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant font-bold">ON ROTATION</span>
+</div>
+<ul class="flex flex-col gap-space-sm pt-space-xs font-label-sm text-label-sm">
+<li class="bg-surface p-space-xs flex items-center justify-between shadow-sm hover:translate-x-1 transition-transform">
+<div class="flex items-center gap-space-xs min-w-0">
+<span class="text-primary font-bold">01.</span>
+<div class="truncate">
+<span class="font-bold text-on-surface truncate block">Sonic Youth</span>
+<span class="text-on-surface-variant text-[10px] block">Bad Moon Rising [LP]</span>
+</div>
+</div>
+<span class="bg-surface-container-high text-on-surface font-bold px-space-xxs text-[9px]">A-SIDE</span>
+</li>
+<li class="bg-surface p-space-xs flex items-center justify-between shadow-sm hover:translate-x-1 transition-transform">
+<div class="flex items-center gap-space-xs min-w-0">
+<span class="text-primary font-bold">02.</span>
+<div class="truncate">
+<span class="font-bold text-on-surface truncate block">Albert Ayler</span>
+<span class="text-on-surface-variant text-[10px] block">Spiritual Unity [ESP-Disk]</span>
+</div>
+</div>
+<span class="bg-surface-container-high text-on-surface font-bold px-space-xxs text-[9px]">MONO</span>
+</li>
+<li class="bg-surface p-space-xs flex items-center justify-between shadow-sm hover:translate-x-1 transition-transform">
+<div class="flex items-center gap-space-xs min-w-0">
+<span class="text-primary font-bold">03.</span>
+<div class="truncate">
+<span class="font-bold text-on-surface truncate block">This Heat</span>
+<span class="text-on-surface-variant text-[10px] block">Deceit [Rough Trade]</span>
+</div>
+</div>
+<span class="bg-surface-container-high text-on-surface font-bold px-space-xxs text-[9px]">RE-CUT</span>
+</li>
+<li class="bg-surface p-space-xs flex items-center justify-between shadow-sm hover:translate-x-1 transition-transform">
+<div class="flex items-center gap-space-xs min-w-0">
+<span class="text-primary font-bold">04.</span>
+<div class="truncate">
+<span class="font-bold text-on-surface truncate block">Cabaret Voltaire</span>
+<span class="text-on-surface-variant text-[10px] block">Mix-Up [Industrial Rec.]</span>
+</div>
+</div>
+<span class="bg-surface-container-high text-on-surface font-bold px-space-xxs text-[9px]">CASSETTE</span>
+</li>
+</ul>
+<div class="mt-space-md pt-space-xs flex items-center justify-between font-label-sm text-label-sm">
+<span class="text-on-surface-variant">FORMAT: ANALOG ONLY</span>
+<a class="text-primary hover:underline font-bold tracking-wider uppercase" href="#">ARCHIVE (68) →</a>
+</div>
+</div>
+</aside>
+</div>
+</section>
+<!-- Interactive Tag Filter Broadside -->
+<section class="w-full bg-surface-container-highest py-space-lg px-gutter-desktop shadow-sm">
+<div class="max-w-[1280px] mx-auto flex flex-col md:flex-row items-start md:items-center justify-between gap-space-md">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-primary text-[22px]">tune</span>
+<span class="font-headline-sm text-headline-sm uppercase text-on-surface tracking-tight">Index Taxonomy:</span>
+</div>
+<!-- Tag Filter Buttons -->
+<div class="flex flex-wrap items-center gap-space-xs" id="tag-filter-group">
+<button class="filter-btn active bg-on-surface text-surface px-space-sm py-space-xs font-label-md text-label-md uppercase font-bold shadow-[2px_2px_0px_#ab2f00] hover:bg-primary hover:text-on-primary transition-all" data-tag="all">
+          All Folios [42]
+        </button>
+<button class="filter-btn bg-surface text-on-surface px-space-sm py-space-xs font-label-md text-label-md uppercase font-bold shadow-[2px_2px_0px_#1b1b1e] hover:bg-secondary-container hover:text-on-secondary-container transition-all" data-tag="punk-theory">
+          Punk Theory [12]
+        </button>
+<button class="filter-btn bg-surface text-on-surface px-space-sm py-space-xs font-label-md text-label-md uppercase font-bold shadow-[2px_2px_0px_#1b1b1e] hover:bg-secondary-container hover:text-on-secondary-container transition-all" data-tag="vinyl-arch">
+          Vinyl Archaeology [09]
+        </button>
+<button class="filter-btn bg-surface text-on-surface px-space-sm py-space-xs font-label-md text-label-md uppercase font-bold shadow-[2px_2px_0px_#1b1b1e] hover:bg-secondary-container hover:text-on-secondary-container transition-all" data-tag="street-press">
+          Street Press [08]
+        </button>
+<button class="filter-btn bg-surface text-on-surface px-space-sm py-space-xs font-label-md text-label-md uppercase font-bold shadow-[2px_2px_0px_#1b1b1e] hover:bg-secondary-container hover:text-on-secondary-container transition-all" data-tag="tech-manifesto">
+          Tech Manifesto [13]
+        </button>
+</div>
+</div>
+</section>
+<!-- Section 2: Lead Articles Grid (2-Column Editorial Spread) -->
+<section class="max-w-[1280px] mx-auto w-full px-gutter-desktop py-space-3xl">
+<div class="flex items-center justify-between pb-space-lg">
+<div class="flex items-center gap-space-sm">
+<span class="bg-primary text-on-primary font-label-lg text-label-lg px-space-xs py-space-xxs shadow-[2px_2px_0px_#1b1b1e]">
+          SEC. 02
+        </span>
+<h3 class="font-headline-lg text-headline-lg text-on-surface uppercase tracking-tight">
+          Current Dispatches &amp; Field Critiques
+        </h3>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant hidden sm:inline uppercase tracking-widest font-bold">
+        SORT: REVERSE CHRONOLOGICAL
+      </span>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-space-xl items-stretch">
+<!-- Article 1: Cassette Aesthetics -->
+<article class="bg-surface-container p-space-lg shadow-[3px_3px_0px_#1b1b1e] flex flex-col justify-between group hover:-translate-y-1 hover:shadow-[5px_5px_0px_#ab2f00] transition-all">
+<div>
+<!-- Article Top Bar -->
+<div class="flex items-center justify-between pb-space-sm font-label-sm text-label-sm text-on-surface-variant">
+<span class="bg-primary-fixed text-on-primary-fixed font-bold px-space-xs py-space-xxs uppercase">
+              [01] TAPE CULTURE
+            </span>
+<div class="flex items-center gap-space-xxs">
+<span class="material-symbols-outlined text-[14px]">timer</span>
+<span>6 MIN READ</span>
+</div>
+</div>
+<!-- Decorative Cassette Graphic Placeholder -->
+<div class="relative w-full h-44 my-space-xs overflow-hidden bg-surface shadow-inner group-hover:bg-surface-container-high transition-colors">
+<img class="w-full h-full object-cover grayscale contrast-150" data-alt="Stylized graphic close up of a vintage C90 magnetic audio cassette shell with handwritten tracklist sticker, exposed tape ribbon, mechanical spools, risograph halftones in charcoal black and signal orange ink on beige newsprint background." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBVHTRKR-DIY5h-GNRVlbSg8FJ7E24c5NrwgyvDNK7RNMP8I_4MOcyJOHFpyWpbEMgICwwcOH0THrturgj-SttBuKFXqNApZu53rIhCvDsPr7qm0SaWiIXUQaYEUVk9Leqm4njZQyEMW8q3c_HXMBilOPprWP-M7dGkIFsGOzx6EEgjdvUiRYWSLWpLEc_pHAFQpDhCAHZ6kq2R29VvJL1IopyRPioDxIzPzqsO5TbQCmHbBD8oClfsgQ"/>
+<div class="absolute top-space-xs left-space-xs bg-primary text-on-primary px-space-xs py-space-xxs font-label-sm text-label-sm font-bold shadow-sm">
+              TYPE II • CrO2
+            </div>
+</div>
+<!-- Headline -->
+<h4 class="font-headline-lg text-headline-lg text-on-surface group-hover:text-primary transition-colors tracking-tight pt-space-xs pb-space-xs">
+            Cassette Tape Aesthetics in the Era of Infinite Streaming
+          </h4>
+<!-- Excerpt -->
+<p class="font-body-md text-body-md text-on-surface-variant pb-space-md leading-relaxed">
+            The tactile friction of physical rewind, the sacred fragility of unspooled magnetic ribbon, and the sheer intentionality of a 45-minute unbroken mix. Why generation Z is embracing the tape hiss paradox.
+          </p>
+</div>
+<div class="flex items-center justify-between pt-space-sm font-label-sm text-label-sm">
+<span class="text-on-surface-variant font-bold">OCT 14, 2024 • DISPATCH #308</span>
+<a class="text-primary font-bold uppercase tracking-wider hover:underline flex items-center gap-space-xxs" href="#">
+<span>Inspect File</span>
+<span class="material-symbols-outlined text-[14px]">north_east</span>
+</a>
+</div>
+</article>
+<!-- Article 2: Photocopier Punk -->
+<article class="bg-surface-container p-space-lg shadow-[3px_3px_0px_#1b1b1e] flex flex-col justify-between group hover:-translate-y-1 hover:shadow-[5px_5px_0px_#ab2f00] transition-all">
+<div>
+<div class="flex items-center justify-between pb-space-sm font-label-sm text-label-sm text-on-surface-variant">
+<span class="bg-secondary-fixed text-on-secondary-fixed font-bold px-space-xs py-space-xxs uppercase">
+              [02] PRINT RADICALS
+            </span>
+<div class="flex items-center gap-space-xxs">
+<span class="material-symbols-outlined text-[14px]">timer</span>
+<span>9 MIN READ</span>
+</div>
+</div>
+<!-- Pull Quote Preview Component -->
+<div class="bg-surface p-space-md my-space-xs shadow-[2px_2px_0px_#1b1b1e] relative">
+<span class="text-primary font-headline-lg text-headline-lg leading-none absolute top-space-xs left-space-xs opacity-40">“</span>
+<p class="font-body-md text-body-md text-on-surface italic pl-space-sm py-space-xxs leading-snug">
+              Cheap toner was our Gutenberg press. If the machine jammed, the resulting black smudge became the cover design.
+            </p>
+<span class="font-label-sm text-label-sm text-on-surface-variant block text-right pt-space-xxs">
+              — Sniffin' Glue Editorial, 1977
+            </span>
+</div>
+<h4 class="font-headline-lg text-headline-lg text-on-surface group-hover:text-primary transition-colors tracking-tight pt-space-xs pb-space-xs">
+            Photocopier Punk: How 70s DIY Zines Invented Modern Desktop Publishing
+          </h4>
+<p class="font-body-md text-body-md text-on-surface-variant pb-space-md leading-relaxed">
+            Long before Aldus PageMaker and PostScript, mimeographs, carbon papers, and cut-and-paste glue sticks pioneered the fragmented, hyperlinked collage sensibility that now underpins the modern web interface.
+          </p>
+</div>
+<div class="flex items-center justify-between pt-space-sm font-label-sm text-label-sm">
+<span class="text-on-surface-variant font-bold">OCT 09, 2024 • DISPATCH #307</span>
+<a class="text-primary font-bold uppercase tracking-wider hover:underline flex items-center gap-space-xxs" href="#">
+<span>Inspect File</span>
+<span class="material-symbols-outlined text-[14px]">north_east</span>
+</a>
+</div>
+</article>
+<!-- Article 3: In Praise of Feedback -->
+<article class="bg-surface-container p-space-lg shadow-[3px_3px_0px_#1b1b1e] flex flex-col justify-between group hover:-translate-y-1 hover:shadow-[5px_5px_0px_#ab2f00] transition-all">
+<div>
+<div class="flex items-center justify-between pb-space-sm font-label-sm text-label-sm text-on-surface-variant">
+<span class="bg-tertiary-fixed text-on-tertiary-fixed font-bold px-space-xs py-space-xxs uppercase">
+              [03] SONIC RESISTANCE
+            </span>
+<div class="flex items-center gap-space-xxs">
+<span class="material-symbols-outlined text-[14px]">timer</span>
+<span>5 MIN READ</span>
+</div>
+</div>
+<div class="relative w-full h-44 my-space-xs overflow-hidden bg-inverse-surface shadow-inner group-hover:opacity-95 transition-opacity">
+<img class="w-full h-full object-cover contrast-150" data-alt="High contrast black and white photograph of an electric guitar leaned against a vintage tube amplifier stack inside a dimly lit garage rehearsal room, glowing red pilot light, coiled audio jacks, dusty grain texture with harsh directional stage spotlight." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAKyhzb9cFMqx4oKvzyBvHgg9Su7xIi4LmldXjjev32z-VMAKjxqvXhK6dORZl-U6EMZ_0qCkMRzCj3JlDxw9FkII9-rjl6aPUP65KiE9NL3ix5yyIEyrKSiPNo04fsGjuSr13cllEySZoIfS30YKBx3sxhRFwfQyzmOTJD6HTKSwPMRV9-UamJ7q3zEB4Ha7O5hi-urHxK45oPBFpMj6uQAFxESOhxP-gwVBTBsp-ZTD_8FyFmr-OouQ"/>
+<div class="absolute bottom-space-xs right-space-xs bg-secondary-container text-on-secondary-container px-space-xs py-space-xxs font-label-sm text-label-sm font-bold shadow-sm">
+              GAIN: 11 / VOLTAGE SPIKE
+            </div>
+</div>
+<h4 class="font-headline-lg text-headline-lg text-on-surface group-hover:text-primary transition-colors tracking-tight pt-space-xs pb-space-xs">
+            In Praise of Feedback: Microtonal Noise as Rebel Expression
+          </h4>
+<p class="font-body-md text-body-md text-on-surface-variant pb-space-md leading-relaxed">
+            When Jimi Hendrix forced an amplifier into self-oscillation at Woodstock, he converted an engineering defect into radical anti-war oratory. A taxonomy of scream frequencies and controlled harmonic chaos.
+          </p>
+</div>
+<div class="flex items-center justify-between pt-space-sm font-label-sm text-label-sm">
+<span class="text-on-surface-variant font-bold">SEP 29, 2024 • DISPATCH #306</span>
+<a class="text-primary font-bold uppercase tracking-wider hover:underline flex items-center gap-space-xxs" href="#">
+<span>Inspect File</span>
+<span class="material-symbols-outlined text-[14px]">north_east</span>
+</a>
+</div>
+</article>
+<!-- Article 4: Markdown as Anti-Bloat -->
+<article class="bg-surface-container p-space-lg shadow-[3px_3px_0px_#1b1b1e] flex flex-col justify-between group hover:-translate-y-1 hover:shadow-[5px_5px_0px_#ab2f00] transition-all">
+<div>
+<div class="flex items-center justify-between pb-space-sm font-label-sm text-label-sm text-on-surface-variant">
+<span class="bg-primary-fixed text-on-primary-fixed font-bold px-space-xs py-space-xxs uppercase">
+              [04] CODE &amp; ETHICS
+            </span>
+<div class="flex items-center gap-space-xxs">
+<span class="material-symbols-outlined text-[14px]">timer</span>
+<span>8 MIN READ</span>
+</div>
+</div>
+<!-- Code Snippet Teaser Block -->
+<div class="bg-inverse-surface text-inverse-on-surface p-space-md my-space-xs shadow-[2px_2px_0px_#1b1b1e] font-label-sm text-label-sm overflow-x-auto">
+<span class="text-primary-fixed block font-bold">// 0% Javascript Client Runtime</span>
+<span class="text-secondary-fixed block">curl -sSL https://bumnote.org/raw/manifesto.md</span>
+<span class="text-tertiary-fixed block pt-space-xxs">cat &gt; /dev/stdout &lt;&lt; 'EOF'</span>
+<span class="text-inverse-on-surface block pl-space-xs italic">"Text was born free; yet everywhere it is in JavaScript chains."</span>
+<span class="text-tertiary-fixed block">EOF</span>
+</div>
+<h4 class="font-headline-lg text-headline-lg text-on-surface group-hover:text-primary transition-colors tracking-tight pt-space-xs pb-space-xs">
+            Markdown as an Anti-Bloat Manifesto: The Joy of Plain Text
+          </h4>
+<p class="font-body-md text-body-md text-on-surface-variant pb-space-md leading-relaxed">
+            Refusing megabyte-heavy CMS overheads, trackers, and telemetry in favor of raw `.md` files that can be rendered with a 40-line shell script. Why true permanence lies in the simple ASCII carriage return.
+          </p>
+</div>
+<div class="flex items-center justify-between pt-space-sm font-label-sm text-label-sm">
+<span class="text-on-surface-variant font-bold">SEP 21, 2024 • DISPATCH #305</span>
+<a class="text-primary font-bold uppercase tracking-wider hover:underline flex items-center gap-space-xxs" href="#">
+<span>Inspect File</span>
+<span class="material-symbols-outlined text-[14px]">north_east</span>
+</a>
+</div>
+</article>
+</div>
+</section>
+<!-- Section 3: Monumental Pull Quote Block -->
+<section class="w-full bg-surface-container-high py-space-3xl px-gutter-desktop shadow-md relative overflow-hidden">
+<div class="max-w-[1040px] mx-auto text-center relative z-10 flex flex-col items-center">
+<!-- Big Decorative Badge -->
+<span class="bg-primary text-on-primary font-label-md text-label-md uppercase px-space-md py-space-xxs font-bold tracking-widest shadow-[3px_3px_0px_#1b1b1e] mb-space-lg">
+        CANONICAL PRINCIPLE
+      </span>
+<!-- Bold Miles Davis Quote -->
+<blockquote class="font-display-md text-display-md text-on-surface tracking-tight leading-tight max-w-[900px]">
+        “If you hit a <span class="bg-secondary-container text-on-secondary-container px-space-xs">wrong note</span>, it’s the next note that you play that determines if it’s good or bad.”
+      </blockquote>
+<div class="pt-space-lg flex items-center gap-space-sm font-label-lg text-label-lg uppercase tracking-wider">
+<span class="text-primary font-bold">— MILES DAVIS</span>
+<span class="text-on-surface-variant">•</span>
+<span class="text-on-surface-variant">PARIS RECORDINGS, 1969</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant max-w-[580px] pt-space-sm">
+        The founding thesis of bumnote: beauty emerges not from clean, frictionless automation, but from the willful audacity to recover an error and turn it into counter-melody.
+      </p>
+</div>
+</section>
+<!-- Section 4: Hugo / Jekyll Frontmatter Preview Box & Static Performance Metrics -->
+<section class="max-w-[1280px] mx-auto w-full px-gutter-desktop py-space-3xl">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-xl items-center">
+<!-- Left: Narrative Explanation (5 Cols) -->
+<div class="lg:col-span-5 flex flex-col gap-space-md">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-primary text-[20px]">terminal</span>
+<span class="font-label-md text-label-md uppercase tracking-wider text-primary font-bold">DEVELOPER SPECIFICATIONS</span>
+</div>
+<h3 class="font-headline-lg text-headline-lg text-on-surface uppercase tracking-tight leading-snug">
+          Zero Bloat. Raw Markdown. Hugo &amp; Jekyll Native.
+        </h3>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+          Every dispatch on <span class="text-on-surface font-bold">bumnote</span> starts life as a flat text file with clean YAML frontmatter. No SQL databases to patch. No sluggish server queries. Just pure semantic HTML generated in milliseconds and cached across the planetary edge.
+        </p>
+<!-- Feature Points -->
+<ul class="flex flex-col gap-space-xs pt-space-xs font-label-sm text-label-sm">
+<li class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-primary text-[18px]">check_circle</span>
+<span class="text-on-surface font-bold">Instant Builds: 240 essays generated in 180ms via Hugo</span>
+</li>
+<li class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-primary text-[18px]">check_circle</span>
+<span class="text-on-surface font-bold">Offline Resilience: Readable in Lynx, w3m, or Curl</span>
+</li>
+<li class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-primary text-[18px]">check_circle</span>
+<span class="text-on-surface font-bold">Decentralized: Distributed via IPFS, Tor onion &amp; RSS 2.0</span>
+</li>
+</ul>
+<div class="pt-space-xs">
+<a class="inline-flex items-center gap-space-xs bg-surface-container-highest text-on-surface px-space-md py-space-xs font-label-md text-label-md uppercase font-bold shadow-[2px_2px_0px_#1b1b1e] hover:bg-primary hover:text-on-primary transition-all" href="#">
+<span>Clone Theme Repository</span>
+<span class="material-symbols-outlined text-[16px]">code</span>
+</a>
+</div>
+</div>
+<!-- Right: Frontmatter Teletype Code Terminal (7 Cols) -->
+<div class="lg:col-span-7 bg-surface-container p-space-lg shadow-[4px_4px_0px_#1b1b1e] relative">
+<!-- Terminal Title Bar -->
+<div class="flex items-center justify-between pb-space-sm border-b border-surface-container-high font-label-sm text-label-sm">
+<div class="flex items-center gap-space-xs">
+<div class="w-3 h-3 bg-primary rounded-full"></div>
+<div class="w-3 h-3 bg-secondary-container rounded-full"></div>
+<div class="w-3 h-3 bg-tertiary-container rounded-full"></div>
+<span class="font-bold text-on-surface pl-space-xs">content/posts/issue-42-wrong-note.md</span>
+</div>
+<span class="bg-surface px-space-xs py-space-xxs text-[10px] text-primary font-bold shadow-sm">YAML FRONTMATTER</span>
+</div>
+<!-- Code Block -->
+<div class="pt-space-md font-label-sm text-label-sm text-on-surface overflow-x-auto leading-loose">
+<p><span class="text-primary font-bold">---</span></p>
+<p><span class="text-secondary font-bold">layout:</span> <span class="text-on-surface">"broadsheet-essay"</span></p>
+<p><span class="text-secondary font-bold">title:</span> <span class="text-primary font-bold">"The Anatomy of a Wrong Note: Why Imperfection Drives Sonic Counterculture"</span></p>
+<p><span class="text-secondary font-bold">date:</span> <span class="text-on-surface">2024-10-18T04:20:00Z</span></p>
+<p><span class="text-secondary font-bold">issue:</span> <span class="text-on-surface">42</span></p>
+<p><span class="text-secondary font-bold">author:</span> <span class="text-on-surface">"Bumnote Desk"</span></p>
+<p><span class="text-secondary font-bold">tags:</span></p>
+<p class="pl-space-md"><span class="text-tertiary font-bold">-</span> noise-theory</p>
+<p class="pl-space-md"><span class="text-tertiary font-bold">-</span> vinyl-archaeology</p>
+<p class="pl-space-md"><span class="text-tertiary font-bold">-</span> cassette-culture</p>
+<p><span class="text-secondary font-bold">rss_broadcast:</span> <span class="text-primary font-bold">true</span></p>
+<p><span class="text-secondary font-bold">static_weight:</span> <span class="text-on-surface">0.08</span></p>
+<p><span class="text-primary font-bold">---</span></p>
+<p class="pt-space-xs text-on-surface-variant italic"># The lead essay follows below in plain text UTF-8...</p>
+</div>
+<!-- Terminal Quick Action bar -->
+<div class="mt-space-md pt-space-xs flex flex-wrap items-center justify-between gap-space-xs font-label-sm text-label-sm">
+<span class="text-on-surface-variant font-bold">ENGINE: HUGO v0.128 EXTENDED</span>
+<button class="bg-on-surface text-surface px-space-xs py-space-xxs uppercase font-bold hover:bg-primary hover:text-on-primary transition-colors flex items-center gap-space-xxs" id="copy-btn">
+<span class="material-symbols-outlined text-[14px]">content_copy</span>
+<span>Copy Frontmatter</span>
+</button>
+</div>
+</div>
+</div>
+</section>
+<!-- Postal Dispatch / Physical Mail Order Strip -->
+<section class="w-full bg-secondary-container text-on-secondary-container py-space-xl px-gutter-desktop shadow-md">
+<div class="max-w-[1280px] mx-auto flex flex-col md:flex-row items-center justify-between gap-space-lg">
+<div class="flex items-center gap-space-md">
+<div class="w-12 h-12 bg-on-secondary-container text-secondary-container flex items-center justify-center font-headline-lg font-bold shadow-[2px_2px_0px_#1b1b1e]">
+          ¶
+        </div>
+<div class="flex flex-col">
+<span class="font-headline-md text-headline-md text-on-secondary-container uppercase tracking-tight">
+            Craving Tangible Ink on Woodpulp?
+          </span>
+<span class="font-body-sm text-body-sm text-on-secondary-container/90">
+            Order physical risograph folios, cassette split tapes, and mail-art zines shipped directly in brown craft mailers.
+          </span>
+</div>
+</div>
+<div class="flex items-center gap-space-sm flex-wrap">
+<a class="bg-on-secondary-container text-secondary-container px-space-lg py-space-sm font-label-md text-label-md uppercase font-bold tracking-wider shadow-[3px_3px_0px_#1b1b1e] hover:bg-primary hover:text-on-primary transition-all" href="#">
+          Browse Zines &amp; Prints Catalog
+        </a>
+</div>
+</div>
+</section>
+</div>
+<script>
+  // Simple Tag filtering active state toggle
+  document.querySelectorAll('#tag-filter-group .filter-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('#tag-filter-group .filter-btn').forEach(b => {
+        b.classList.remove('active', 'bg-on-surface', 'text-surface');
+        b.classList.add('bg-surface', 'text-on-surface');
+      });
+      btn.classList.remove('bg-surface', 'text-on-surface');
+      btn.classList.add('active', 'bg-on-surface', 'text-surface');
+    });
+  });
+
+  // Frontmatter Copy button interaction
+  const copyBtn = document.getElementById('copy-btn');
+  if (copyBtn) {
+    copyBtn.addEventListener('click', () => {
+      const textToCopy = `---
+layout: "broadsheet-essay"
+title: "The Anatomy of a Wrong Note: Why Imperfection Drives Sonic Counterculture"
+date: 2024-10-18T04:20:00Z
+issue: 42
+author: "Bumnote Desk"
+tags:
+  - noise-theory
+  - vinyl-archaeology
+  - cassette-culture
+rss_broadcast: true
+---`;
+      navigator.clipboard.writeText(textToCopy).then(() => {
+        const originalHtml = copyBtn.innerHTML;
+        copyBtn.innerHTML = `<span class="material-symbols-outlined text-[14px]">check</span><span>COPIED!</span>`;
+        setTimeout(() => {
+          copyBtn.innerHTML = originalHtml;
+        }, 2000);
+      });
+    });
+  }
+</script></main><footer class="w-full bg-surface-container-low border-t-2 border-on-surface pt-space-3xl pb-space-2xl"><div class="max-w-[1280px] mx-auto px-gutter-desktop"><div class="grid grid-cols-1 md:grid-cols-12 gap-space-xl pb-space-2xl border-b border-outline-variant/60"><div class="md:col-span-4 flex flex-col gap-space-sm"><div class="flex items-center gap-space-sm"><span class="font-headline-md text-headline-md text-on-surface uppercase">bumnote</span><span class="font-label-sm text-label-sm bg-surface-container-highest px-space-xs py-space-xxs text-on-surface font-bold">PRESS FOLIO</span></div><p class="font-body-sm text-body-sm text-on-surface-variant">An irregular independent broadsheet publishing essays on counterculture, cassette archaeology, rogue typography, and underground music philosophy.</p><div class="pt-space-xs font-label-sm text-label-sm text-on-surface-variant uppercase tracking-widest"><p>Built with Jekyll / Hugo &amp; Markdown</p><p class="text-primary font-bold">High fidelity, zero bloat</p></div></div><div class="md:col-span-4 flex flex-col gap-space-sm"><span class="font-label-md text-label-md uppercase tracking-wider text-on-surface font-bold">The Bootleg Dispatch</span><p class="font-body-sm text-body-sm text-on-surface-variant">Receive physical pamphlets, static feed drops, and essay installments directly in your terminal or inbox.</p><div class="flex flex-col sm:flex-row gap-space-xs pt-space-xxs"><input class="bg-surface px-space-sm py-space-xs border border-on-surface font-label-sm text-label-sm text-on-surface focus:outline-none focus:border-primary flex-1" placeholder="courier@underground.org" type="email"/><button class="bg-on-surface text-surface px-space-md py-space-xs font-label-md text-label-md uppercase font-bold hover:bg-primary hover:text-on-primary transition-colors">Subscribe</button></div></div><div class="md:col-span-2 flex flex-col gap-space-xs"><span class="font-label-md text-label-md uppercase tracking-wider text-on-surface font-bold">Categories</span><ul class="font-label-sm text-label-sm flex flex-col gap-space-xxs text-on-surface-variant"><li class="hover:text-primary transition-colors"><a data-path="articles" href="#">[01] Sonics &amp; Tape Noise</a></li><li class="hover:text-primary transition-colors"><a data-path="articles" href="#">[02] Underground Mimeo</a></li><li class="hover:text-primary transition-colors"><a data-path="articles" href="#">[03] Static Architecture</a></li><li class="hover:text-primary transition-colors"><a data-path="articles" href="#">[04] Cultural Marginalia</a></li><li class="hover:text-primary transition-colors"><a data-path="articles" href="#">[05] Counter-Essays</a></li></ul></div><div class="md:col-span-2 flex flex-col gap-space-xs"><span class="font-label-md text-label-md uppercase tracking-wider text-on-surface font-bold">Channels</span><ul class="font-label-sm text-label-sm flex flex-col gap-space-xxs text-on-surface-variant"><li class="hover:text-primary transition-colors"><a data-path="rss-feed" href="#">RSS 2.0 Broadcaster</a></li><li class="hover:text-primary transition-colors"><a data-path="about-manifesto" href="#">Colophon &amp; Specs</a></li><li class="hover:text-primary transition-colors"><a data-path="zines-prints" href="#">Postal Mail Order</a></li><li class="hover:text-primary transition-colors"><a data-path="dispatches-notes" href="#">Source Markdown Git</a></li></ul></div></div><div class="flex flex-col sm:flex-row items-center justify-between gap-space-md pt-space-lg font-label-sm text-label-sm text-on-surface-variant"><div class="flex items-center gap-space-sm flex-wrap"><span>© 1974–PRESENT BUMNOTE PRESS</span><span>•</span><span>COPYLEFT / ANTI-COPYRIGHT CC BY-NC 4.0</span></div><a class="hover:text-primary uppercase tracking-widest font-bold flex items-center gap-space-xxs transition-colors" href="#top"><span>Back to Top ↑</span></a></div></div></footer></body></html>

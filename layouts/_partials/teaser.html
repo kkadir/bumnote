@@ -1,0 +1,20 @@
+{{- $p := .page }}{{ $size := .size }}
+{{- with $p.Params.teaser }}
+{{- $kind := .kind | default "plate" }}
+{{- if eq $kind "quote" }}
+<blockquote class="teaser-quote"><p class="body-md">{{ .text }}</p>{{ with .cite }}<cite class="label-sm">— {{ . }}</cite>{{ end }}</blockquote>
+{{- else if eq $kind "code" }}
+<pre class="teaser-code" aria-label="{{ T "code_excerpt" }}">{{ range .lines }}{{ $cls := "t" }}{{ if or (hasPrefix . "//") (hasPrefix . "#") }}{{ $cls = "c" }}{{ else if hasPrefix . "$ " }}{{ $cls = "cmd" }}{{ else if hasPrefix . "> " }}{{ $cls = "out" }}{{ end }}<span class="tc-{{ $cls }}">{{ . }}</span>
+{{ end }}</pre>
+{{- else }}
+<figure class="plate plate--{{ $size }}">
+  {{- if eq $kind "image" }}
+  <img src="{{ .src | relURL }}" alt="{{ .alt }}" loading="lazy" decoding="async">
+  {{- else }}
+  {{ partial "plate.html" (dict "kind" (.plate | default "halftone") "id" (substr (md5 $p.Permalink) 0 8)) }}
+  {{- end }}
+  {{ with .caption }}<figcaption class="plate__caption label-sm">{{ . }}</figcaption>{{ end }}
+  {{ with .stamp }}<span class="plate__stamp sticker">{{ . }}</span>{{ end }}
+</figure>
+{{- end }}
+{{- end }}

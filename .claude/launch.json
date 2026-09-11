@@ -1,0 +1,11 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "bumnote",
+      "runtimeExecutable": "hugo",
+      "runtimeArgs": ["server", "--port", "1313", "--bind", "127.0.0.1", "--disableFastRender", "--noHTTPCache"],
+      "port": 1313
+    }
+  ]
+}

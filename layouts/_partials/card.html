@@ -1,0 +1,17 @@
+{{- $p := .page }}{{ $i := .index }}
+{{- $variant := index (slice "a" "b" "c") (mod (sub $i 1) 3) }}
+<article class="card">
+  <div class="card__top label-sm">
+    {{- with $p.GetTerms "categories" }}{{ $c := index . 0 }}
+    <a class="chip chip--{{ $variant }}" href="{{ $c.RelPermalink }}">[{{ printf "%02d" $i }}] {{ $c.LinkTitle }}</a>
+    {{- end }}
+    <span class="meta">{{ T "min_read" $p.ReadingTime }}</span>
+  </div>
+  {{ partial "teaser.html" (dict "page" $p "size" "card") }}
+  <h3 class="headline-lg card__title"><a href="{{ $p.RelPermalink }}">{{ $p.Title }}</a></h3>
+  <p class="body-md card__excerpt">{{ or $p.Description ($p.Summary | plainify) }}</p>
+  <div class="card__foot label-sm">
+    <span><time datetime="{{ $p.Date.Format "2006-01-02" }}">{{ $p.Date | time.Format ":date_medium" }}</time>{{ with $p.Params.dispatch }} • {{ T "dispatch_no" . }}{{ end }}</span>
+    <a class="card__link" href="{{ $p.RelPermalink }}">{{ T "inspect_file" }} ↗</a>
+  </div>
+</article>

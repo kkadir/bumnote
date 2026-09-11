@@ -1,0 +1,246 @@
+baseURL = 'https://kkadir.github.io/bumnote/'
+defaultContentLanguage = 'en'
+defaultContentLanguageInSubdir = false
+enableRobotsTXT = true
+summaryLength = 35
+removePathAccents = true
+
+[pagination]
+  pagerSize = 12
+
+# Language-agnostic params. Language-specific ones live under [languages.*.params].
+[params]
+  issue = '42'
+  established = '1974'
+  repo = 'https://github.com/kkadir/bumnote'
+
+[taxonomies]
+  category = 'categories'
+  tag = 'tags'
+
+# ---------------------------------------------------------------- languages
+[languages]
+
+  [languages.en]
+    languageCode = 'en-GB'
+    languageName = 'English'
+    languageDirection = 'ltr'
+    contentDir = 'content/en'
+    weight = 1
+    title = 'bumnote'
+    copyright = '© 1974–present bumnote press • Copyleft / anti-copyright CC BY-NC 4.0'
+    timeZone = 'Europe/London'
+
+    [languages.en.params]
+      tagline = 'Irreverent Essays, Counter-Notes & Sonic Curiosities'
+      description = 'An irregular independent broadsheet publishing essays on counterculture, cassette archaeology, rogue typography, and underground music philosophy.'
+      issueName = 'Autumn Rotation'
+      frequency = 'Fortnightly static batch'
+      folio = 'Print archive ed.'
+
+      [languages.en.params.principle]
+        label = 'Canonical principle'
+        before = 'If you hit a'
+        highlight = 'wrong note'
+        after = ', it’s the next note that you play that determines if it’s good or bad.'
+        attribution = 'Miles Davis'
+        source = 'Paris recordings, 1969'
+        note = 'The founding thesis of bumnote: beauty emerges not from clean, frictionless automation, but from the willful audacity to recover an error and turn it into counter-melody.'
+
+      [languages.en.params.scratchpad]
+        memo = 'Memo • 042-B'
+        byline = 'Desk scribes'
+        title = 'Editor’s Scratchpad'
+        quote = 'We spent all Tuesday trying to align magnetic heads on a 1982 Tascam 244. The resulting azimuth bleed gave the drum fills a ghost shimmer no VST plugin could invent in a thousand years.'
+        runLabel = '// Recent physical run:'
+        runStatus = 'Sold out'
+        runNote = 'Pamphlet 09 “Tape Head Cults” printed on 70gsm newsprint. 300 numbered copies dispatched via airmail.'
+
+      [languages.en.params.mailorder]
+        title = 'Craving tangible ink on woodpulp?'
+        text = 'Order physical risograph folios, cassette split tapes, and mail-art zines shipped directly in brown craft mailers.'
+        cta = 'Browse zines & prints catalog'
+        email = 'orders@bumnote.org'
+
+      [languages.en.params.newsletter]
+        title = 'The Bootleg Dispatch'
+        text = 'Receive physical pamphlets, static feed drops, and essay installments directly in your terminal or inbox.'
+        # Set to your form endpoint (Buttondown, Listmonk, Formspree…). Empty = form posts nowhere.
+        action = ''
+        placeholder = 'courier@underground.org'
+
+    [[languages.en.menus.main]]
+      name = 'Articles'
+      pageRef = '/posts'
+      weight = 10
+    [[languages.en.menus.main]]
+      name = 'Dispatches / Notes'
+      pageRef = '/notes'
+      weight = 20
+    [[languages.en.menus.main]]
+      name = 'Zines & Prints'
+      pageRef = '/zines'
+      weight = 30
+    [[languages.en.menus.main]]
+      name = 'About & Manifesto'
+      pageRef = '/about'
+      weight = 40
+    [[languages.en.menus.main]]
+      name = 'Index'
+      pageRef = '/categories'
+      weight = 50
+    [[languages.en.menus.main]]
+      name = 'RSS'
+      url = '/index.xml'
+      weight = 60
+      [languages.en.menus.main.params]
+        class = 'nav__link--rss'
+        rss = true
+
+    [[languages.en.menus.channels]]
+      name = 'RSS 2.0 broadcaster'
+      url = '/index.xml'
+      weight = 10
+      [languages.en.menus.channels.params]
+        rss = true
+    [[languages.en.menus.channels]]
+      name = 'Colophon & specs'
+      pageRef = '/about'
+      weight = 20
+    [[languages.en.menus.channels]]
+      name = 'Postal mail order'
+      pageRef = '/zines'
+      weight = 30
+    [[languages.en.menus.channels]]
+      name = 'Source Markdown (git)'
+      url = 'https://github.com/kkadir/bumnote'
+      weight = 40
+
+  [languages.tr]
+    languageCode = 'tr-TR'
+    languageName = 'Türkçe'
+    languageDirection = 'ltr'
+    contentDir = 'content/tr'
+    weight = 2
+    title = 'bumnote'
+    copyright = '© 1974–bugün bumnote basımevi • Copyleft / anti-telif CC BY-NC 4.0'
+    timeZone = 'Europe/Istanbul'
+
+    [languages.tr.params]
+      tagline = 'Küstah Denemeler, Karşı-Notalar & Sonik Meraklar'
+      description = 'Karşı kültür, kaset arkeolojisi, başıbozuk tipografi ve yeraltı müzik felsefesi üzerine denemeler yayımlayan düzensiz, bağımsız bir gazete.'
+      issueName = 'Sonbahar Rotasyonu'
+      frequency = 'İki haftada bir statik parti'
+      folio = 'Basılı arşiv baskısı'
+
+      [languages.tr.params.principle]
+        label = 'Kurucu ilke'
+        before = 'Eğer'
+        highlight = 'yanlış bir nota'
+        after = ' çalarsan, onun iyi mi kötü mü olduğunu belirleyen, bir sonraki çaldığın notadır.'
+        attribution = 'Miles Davis'
+        source = 'Paris kayıtları, 1969'
+        note = 'bumnote’un kurucu tezi: güzellik temiz, sürtünmesiz otomasyondan değil, bir hatayı toparlayıp karşı-melodiye çevirme cüretinden doğar.'
+
+      [languages.tr.params.scratchpad]
+        memo = 'Not • 042-B'
+        byline = 'Masa yazıcıları'
+        title = 'Editörün Karalama Defteri'
+        quote = 'Bütün salıyı 1982 model bir Tascam 244’ün manyetik kafalarını hizalamaya çalışarak geçirdik. Ortaya çıkan azimut sızıntısı davul dolgularına hiçbir VST eklentisinin bin yılda icat edemeyeceği hayaletimsi bir parıltı verdi.'
+        runLabel = '// Son fiziksel baskı:'
+        runStatus = 'Tükendi'
+        runNote = '09 numaralı broşür “Bant Kafası Tarikatları” 70 gr gazete kâğıdına basıldı. 300 numaralı kopya uçak postasıyla gönderildi.'
+
+      [languages.tr.params.mailorder]
+        title = 'Odun hamuru üzerinde elle tutulur mürekkep mi istiyorsunuz?'
+        text = 'Fiziksel risograf folyoları, split kasetler ve posta sanatı fanzinleri doğrudan kahverengi kraft zarflarla kapınıza gelsin.'
+        cta = 'Fanzin & baskı kataloğuna göz at'
+        email = 'orders@bumnote.org'
+
+      [languages.tr.params.newsletter]
+        title = 'Korsan Bildiri'
+        text = 'Fiziksel broşürler, statik akış bırakmaları ve deneme tefrikaları doğrudan terminalinize ya da gelen kutunuza gelsin.'
+        action = ''
+        placeholder = 'kurye@yeralti.org'
+
+    [[languages.tr.menus.main]]
+      name = 'Yazılar'
+      pageRef = '/posts'
+      weight = 10
+    [[languages.tr.menus.main]]
+      name = 'Bildiriler / Notlar'
+      pageRef = '/notes'
+      weight = 20
+    [[languages.tr.menus.main]]
+      name = 'Fanzinler & Baskılar'
+      pageRef = '/zines'
+      weight = 30
+    [[languages.tr.menus.main]]
+      name = 'Hakkında & Manifesto'
+      pageRef = '/about'
+      weight = 40
+    [[languages.tr.menus.main]]
+      name = 'Dizin'
+      pageRef = '/categories'
+      weight = 50
+    [[languages.tr.menus.main]]
+      name = 'RSS'
+      url = '/tr/index.xml'
+      weight = 60
+      [languages.tr.menus.main.params]
+        class = 'nav__link--rss'
+        rss = true
+
+    [[languages.tr.menus.channels]]
+      name = 'RSS 2.0 yayıncısı'
+      url = '/tr/index.xml'
+      weight = 10
+      [languages.tr.menus.channels.params]
+        rss = true
+    [[languages.tr.menus.channels]]
+      name = 'Künye & özellikler'
+      pageRef = '/about'
+      weight = 20
+    [[languages.tr.menus.channels]]
+      name = 'Posta siparişi'
+      pageRef = '/zines'
+      weight = 30
+    [[languages.tr.menus.channels]]
+      name = 'Kaynak Markdown (git)'
+      url = 'https://github.com/kkadir/bumnote'
+      weight = 40
+
+# ---------------------------------------------------------------- markup & outputs
+[markup]
+  [markup.goldmark.renderer]
+    unsafe = true
+  [markup.goldmark.parser.attribute]
+    block = true
+    title = true
+  [markup.highlight]
+    noClasses = false
+    lineNos = false
+    guessSyntax = true
+  [markup.tableOfContents]
+    startLevel = 2
+    endLevel = 3
+
+[outputFormats.markdown]
+  mediaType = 'text/markdown'
+  baseName = 'index'
+  isPlainText = true
+  notAlternative = true
+
+[outputs]
+  home = ['html', 'rss']
+  section = ['html', 'rss']
+  taxonomy = ['html']
+  term = ['html', 'rss']
+  page = ['html', 'markdown']
+
+[services.rss]
+  limit = 20
+
+[imaging]
+  quality = 85
+  resampleFilter = 'Lanczos'

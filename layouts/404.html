@@ -1,0 +1,7 @@
+{{ define "main" }}
+<section class="wrap wrap--narrow notfound">
+  <span class="sticker">{{ T "error_404" }}</span>
+  <h1 class="display-lg">{{ T "wrong_note" }}</h1>
+  <p class="body-lg">{{ T "not_found_body" (dict "Home" site.Home.RelPermalink "Archive" (site.GetPage "/posts").RelPermalink) | safeHTML }}</p>
+</section>
+{{ end }}

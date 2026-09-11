@@ -1,0 +1,23 @@
+{{ define "main" }}
+{{- $terms := .Data.Terms.ByCount }}
+<section class="wrap wrap--standard listing">
+  <header class="listing__head">
+    <div class="card__chips"><span class="sticker sticker--flat">{{ T "index" }}</span><span class="label-sm">{{ T (printf "count_%s" .Data.Plural) (len $terms) }}</span></div>
+    <h1 class="display-md">{{ .Title }}</h1>
+    <p class="body-lg listing__desc">{{ T "index_intro" }}</p>
+  </header>
+  <ol class="rows">
+    {{- range $i, $e := $terms }}
+    <li class="row">
+      <span class="row__idx label-lg">[{{ printf "%02d" (add $i 1) }}]</span>
+      <div class="row__main"><h2 class="headline-md row__title"><a href="{{ $e.Page.RelPermalink }}">{{ $e.Page.LinkTitle }}</a></h2></div>
+      <div class="row__meta label-sm"><span>{{ T "files" $e.Count }}</span></div>
+    </li>
+    {{- end }}
+  </ol>
+  <p class="label-sm listing__alt">
+    {{- if eq .Data.Plural "categories" }}<a href="{{ (site.GetPage "/tags").RelPermalink }}">{{ T "browse_by_tag" }} →</a>
+    {{- else }}<a href="{{ (site.GetPage "/categories").RelPermalink }}">{{ T "browse_by_category" }} →</a>{{ end }}
+  </p>
+</section>
+{{ end }}

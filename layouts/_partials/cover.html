@@ -1,0 +1,40 @@
+{{- /* Article cover: front matter `cover` (src | plate, alt, caption, stamp, color), falling back to the card teaser's image or plate. */ -}}
+{{- $p := . }}
+{{- $img := "" }}{{ $plate := "" }}{{ $alt := "" }}{{ $caption := "" }}{{ $stamp := "" }}{{ $color := false }}
+{{- with $p.Params.cover }}
+  {{- $img = .src | default "" }}
+  {{- $plate = .plate | default "" }}
+  {{- $alt = .alt | default "" }}
+  {{- $caption = .caption | default "" }}
+  {{- $stamp = .stamp | default "" }}
+  {{- $color = .color | default false }}
+{{- end }}
+{{- if not (or $img $plate) }}
+  {{- with $p.Params.teaser }}
+    {{- $kind := .kind | default "plate" }}
+    {{- if eq $kind "image" }}{{ $img = .src | default "" }}{{ $alt = .alt | default "" }}
+    {{- else if eq $kind "plate" }}{{ $plate = .plate | default "halftone" }}{{ end }}
+    {{- if not $caption }}{{ $caption = .caption | default "" }}{{ end }}
+    {{- if not $stamp }}{{ $stamp = .stamp | default "" }}{{ end }}
+  {{- end }}
+{{- end }}
+{{- if or $img $plate }}
+<figure class="plate plate--cover{{ if $color }} plate--color{{ end }}">
+  {{- if $img }}
+    {{- $r := partial "image-resource.html" (dict "page" $p "src" $img) }}
+    {{- if $r }}
+      {{- $main := $r }}{{ if gt $r.Width 1600 }}{{ $main = $r.Resize "1600x q85" }}{{ end }}
+      {{- $set := slice }}
+      {{- range slice 640 1040 1600 }}{{ if gt $r.Width . }}{{ $v := $r.Resize (printf "%dx q85" .) }}{{ $set = $set | append (printf "%s %dw" $v.RelPermalink .) }}{{ end }}{{ end }}
+      {{- $set = $set | append (printf "%s %dw" $main.RelPermalink $main.Width) }}
+  <img src="{{ $main.RelPermalink }}" srcset="{{ delimit $set ", " }}" sizes="(min-width: 1120px) 1040px, 100vw" width="{{ $main.Width }}" height="{{ $main.Height }}" alt="{{ $alt }}" decoding="async" fetchpriority="high">
+    {{- else }}
+  <img src="{{ $img | relURL }}" alt="{{ $alt }}" decoding="async" fetchpriority="high">
+    {{- end }}
+  {{- else }}
+  {{ partial "plate.html" (dict "kind" $plate "id" (printf "c%s" (substr (md5 $p.Permalink) 0 8))) }}
+  {{- end }}
+  {{- with $caption }}<figcaption class="plate__caption label-sm">{{ . }}</figcaption>{{ end }}
+  {{- with $stamp }}<span class="plate__stamp sticker">{{ . }}</span>{{ end }}
+</figure>
+{{- end }}

@@ -1,0 +1,157 @@
+{{ define "main" }}
+{{- $posts := where site.RegularPages "Section" "posts" }}
+{{- $featured := where $posts "Params.featured" true }}
+{{- $lead := cond (gt (len $featured) 0) (index $featured 0) (index $posts 0) }}
+{{- $rest := where $posts "Permalink" "ne" $lead.Permalink }}
+{{- $spins := index hugo.Data.spins site.Language.Lang }}
+
+<div class="ticker">
+  <div class="wrap ticker__in label-sm">
+    <div class="ticker__group">
+      <span class="sticker sticker--flat sticker--xs">{{ T "special_folio" }}</span>
+      <span class="ink">{{ T "issue_rotation" (dict "Issue" site.Params.issue "Name" site.Params.issueName) }}</span>
+      <span class="dot">•</span>
+      <span class="hide-md">{{ T "frequency" site.Params.frequency }}</span>
+      <span class="dot hide-md">•</span>
+      <span class="ink-signal">{{ T "static_markdown" }}</span>
+    </div>
+    <div class="ticker__group">
+      <span class="ink">{{ T "files_label" }}</span>
+      <span class="tag ink-signal">{{ T "flat_md" (len site.RegularPages) }}</span>
+      <span class="dot">•</span>
+      <span class="ink-amber">{{ T "no_trackers" }}</span>
+      <span class="dot hide-md">•</span>
+      <span class="hide-md">{{ T "engine" hugo.Version }}</span>
+    </div>
+  </div>
+</div>
+
+<section class="wrap hero" aria-labelledby="lead-title">
+  <article class="card card--lead hero__lead">
+    <div class="card__top">
+      <div class="card__chips">
+        <span class="sticker">{{ T "essay_issue" ($lead.Params.issue | default site.Params.issue) }}</span>
+        {{- with $lead.Params.kicker }}<span class="tag ink-signal">{{ . }}</span>{{ end }}
+      </div>
+      {{ partial "meta.html" $lead }}
+    </div>
+    <h1 class="display-lg hero__title" id="lead-title"><a href="{{ $lead.RelPermalink }}">{{ partial "title-hl.html" $lead }}</a></h1>
+    {{ partial "teaser.html" (dict "page" $lead "size" "lead") }}
+    <p class="body-lg hero__standfirst">{{ or $lead.Description ($lead.Summary | plainify) }}</p>
+    <div class="hero__actions">
+      <a class="btn" href="{{ $lead.RelPermalink }}">{{ T "read_long_form" }} <span aria-hidden="true">→</span></a>
+      {{- with $lead.GetTerms "tags" }}
+      <div class="filed label-sm"><span>{{ T "filed_under" }}</span>{{ range . }}<a class="tag" href="{{ .RelPermalink }}">#{{ .LinkTitle }}</a>{{ end }}</div>
+      {{- end }}
+    </div>
+  </article>
+
+  <aside class="hero__rail">
+    {{- with site.Params.scratchpad }}
+    <section class="memo" aria-label="{{ .title }}">
+      <div class="memo__top"><span class="sticker sticker--flat">{{ .memo }}</span><span class="label-sm memo__by">{{ .byline }}</span></div>
+      <h2 class="headline-md memo__title">{{ .title }}</h2>
+      <p class="body-sm memo__quote">“{{ .quote }}”</p>
+      <div class="memo__slip">
+        <div class="memo__sliprow label-sm"><span class="ink-signal">{{ .runLabel }}</span><span class="tag">{{ .runStatus }}</span></div>
+        <p class="label-sm memo__note">{{ .runNote }}</p>
+      </div>
+    </section>
+    {{- end }}
+    {{- with $spins }}
+    <section class="spins" aria-label="{{ T "recent_spins" }}">
+      <div class="spins__top">
+        <h2 class="headline-sm"><svg viewBox="0 0 18 18" aria-hidden="true"><rect x="1" y="6" width="3" height="10"/><rect x="5.5" y="2" width="3" height="14"/><rect x="10" y="8" width="3" height="8"/><rect x="14.5" y="4" width="3" height="12"/></svg>{{ T "recent_spins" }}</h2>
+        <span class="label-sm ink">{{ T "on_rotation" }}</span>
+      </div>
+      <ol class="spins__list">
+        {{- range $i, $s := .items }}
+        <li class="spins__row"><span class="idx label-sm">{{ printf "%02d" (add $i 1) }}.</span><span class="spins__who"><strong>{{ $s.artist }}</strong><span class="label-sm">{{ $s.record }}</span></span><span class="tag">{{ $s.format }}</span></li>
+        {{- end }}
+      </ol>
+      <div class="spins__foot label-sm"><span>{{ T "format_analog" }}</span>{{ with .archive }}<a href="{{ .url | relURL }}">{{ .label }}</a>{{ end }}</div>
+    </section>
+    {{- end }}
+  </aside>
+</section>
+
+<section class="taxo" aria-label="{{ T "index_taxonomy" }}">
+  <div class="wrap taxo__in">
+    <h2 class="headline-sm taxo__h"><span class="idx" aria-hidden="true">≡</span> {{ T "index_taxonomy" }}</h2>
+    <div class="taxo__chips">
+      <a class="chip chip--filter is-active" href="{{ (site.GetPage "/posts").RelPermalink }}">{{ T "all_folios" }} [{{ printf "%02d" (len $posts) }}]</a>
+      {{- range site.Taxonomies.categories.ByCount }}
+      <a class="chip chip--filter" href="{{ .Page.RelPermalink }}">{{ .Page.LinkTitle }} [{{ printf "%02d" .Count }}]</a>
+      {{- end }}
+    </div>
+  </div>
+</section>
+
+<section class="wrap section" aria-labelledby="dispatches-title">
+  <header class="sec-head">
+    <div class="sec-head__l"><span class="sticker sticker--flat">{{ T "sec_02" }}</span><h2 class="headline-lg" id="dispatches-title">{{ T "current_dispatches" }}</h2></div>
+    <span class="label-sm hide-sm">{{ T "sort_reverse_chron" }}</span>
+  </header>
+  <div class="grid-2">
+    {{- range $i, $p := first 4 $rest }}
+    {{ partial "card.html" (dict "page" $p "index" (add $i 1)) }}
+    {{- end }}
+  </div>
+  {{- if gt (len $rest) 4 }}
+  <div class="section__more"><a class="btn btn--secondary" href="{{ (site.GetPage "/posts").RelPermalink }}">{{ T "all_articles" (len $posts) }} →</a></div>
+  {{- end }}
+</section>
+
+{{- with site.Params.principle }}
+<section class="principle" aria-label="{{ .label }}">
+  <div class="wrap wrap--standard principle__in">
+    <span class="sticker">{{ .label }}</span>
+    <blockquote class="display-md principle__quote">“{{ .before }} <mark>{{ .highlight }}</mark>{{ .after }}”</blockquote>
+    <p class="label-lg principle__cite"><span class="ink-signal">— {{ .attribution }}</span><span class="dot">•</span><span>{{ .source }}</span></p>
+    <p class="body-sm principle__note">{{ .note }}</p>
+  </div>
+</section>
+{{- end }}
+
+<section class="wrap section devspec" aria-labelledby="devspec-title">
+  <div class="devspec__copy">
+    <p class="label-md ink-signal">■ {{ T "dev_specs" }}</p>
+    <h2 class="headline-lg" id="devspec-title">{{ T "dev_title" }}</h2>
+    <p class="body-md">{{ T "dev_body" site.Title | safeHTML }}</p>
+    <ul class="checks label-sm">
+      <li>{{ T "dev_check_builds" (dict "Pages" (len site.RegularPages) "Version" hugo.Version) }}</li>
+      <li>{{ T "dev_check_offline" }}</li>
+      <li>{{ T "dev_check_markdown" | safeHTML }}</li>
+    </ul>
+    {{- with site.Params.repo }}
+    <a class="btn btn--secondary" href="{{ . }}">{{ T "clone_repo" }} ‹/›</a>
+    {{- end }}
+  </div>
+  <div class="terminal">
+    <div class="terminal__bar label-sm">
+      <span class="terminal__lights" aria-hidden="true"><i></i><i></i><i></i></span>
+      <span class="terminal__file">{{ with $lead.File }}{{ strings.TrimPrefix (printf "%s/" hugo.WorkingDir) .Filename }}{{ end }}</span>
+      <span class="tag ink-signal">{{ T "yaml_front_matter" }}</span>
+    </div>
+<pre class="terminal__pre" id="frontmatter">{{ partial "frontmatter.html" $lead }}</pre>
+    <div class="terminal__foot label-sm">
+      <span>{{ T "engine_ext" (dict "Version" hugo.Version "Extended" hugo.IsExtended) }}</span>
+      <button class="btn btn--sm" type="button" data-copy="frontmatter" data-copied="{{ T "copied" }}">{{ T "copy_front_matter" }}</button>
+    </div>
+  </div>
+</section>
+
+{{- with site.Params.mailorder }}
+<section class="mailorder" aria-label="{{ T "mail_order" }}">
+  <div class="wrap mailorder__in">
+    <div class="mailorder__l">
+      <span class="mailorder__pilcrow" aria-hidden="true">¶</span>
+      <div><h2 class="headline-md">{{ .title }}</h2><p class="body-sm">{{ .text }}</p></div>
+    </div>
+    {{- with site.GetPage "/zines" }}
+    <a class="btn" href="{{ .RelPermalink }}">{{ site.Params.mailorder.cta }}</a>
+    {{- end }}
+  </div>
+</section>
+{{- end }}
+{{ end }}

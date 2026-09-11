@@ -1,0 +1,7 @@
+{{- /* Resolve an image path to a processable Hugo resource: page bundle first, then assets/. Returns "" for static paths, URLs, or SVGs. */ -}}
+{{- $p := .page }}{{ $src := .src }}
+{{- $r := "" }}
+{{- with $p.Resources }}{{ with .GetMatch $src }}{{ $r = . }}{{ end }}{{ end }}
+{{- if not $r }}{{ with resources.Get (strings.TrimPrefix "/" $src) }}{{ $r = . }}{{ end }}{{ end }}
+{{- if $r }}{{ if or (ne $r.MediaType.MainType "image") (eq $r.MediaType.SubType "svg") }}{{ $r = "" }}{{ end }}{{ end }}
+{{- return $r }}

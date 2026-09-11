@@ -1,0 +1,208 @@
+[skip_to_content]
+other = "İçeriğe atla"
+[home]
+other = "ana sayfa"
+[language]
+other = "Dil"
+[primary_nav]
+other = "Ana gezinme"
+[issue_no]
+other = "Sayı {{ . }}"
+[dispatches_from]
+other = "Yeraltından bildiriler"
+[est]
+other = "Kuruluş {{ . }}"
+[static_rss_ready]
+other = "Statik RSS hazır"
+[folio]
+other = "Folyo: {{ . }}"
+[raw_unfiltered]
+other = "Ham • Filtresiz"
+[toggle_theme]
+other = "Ters okuma modunu aç/kapat"
+[invert]
+other = "Ters çevir"
+
+[special_folio]
+other = "Özel folyo"
+[issue_rotation]
+other = "Sayı {{ .Issue }} / {{ .Name }}"
+[frequency]
+other = "Sıklık: {{ . }}"
+[static_markdown]
+other = "%100 statik Markdown"
+[files_label]
+other = "Dosyalar:"
+[flat_md]
+other = "{{ . }} düz .md"
+[no_trackers]
+other = "İzleyici yok"
+[engine]
+other = "Motor: Hugo {{ . }}"
+
+[essay_issue]
+other = "Deneme // Sayı #{{ . }}"
+[note]
+other = "Not"
+[note_dispatch]
+other = "Not // #{{ . }}"
+[min_read]
+one = "{{ . }} dk okuma"
+other = "{{ . }} dk okuma"
+[read_long_form]
+other = "Uzun yazıyı oku"
+[filed_under]
+other = "Dosyalandığı yer:"
+[recent_spins]
+other = "Son çalınanlar"
+[on_rotation]
+other = "Rotasyonda"
+[format_analog]
+other = "Format: yalnızca analog"
+[index_taxonomy]
+other = "Dizin taksonomisi:"
+[all_folios]
+other = "Tüm folyolar"
+[sec_02]
+other = "Böl. 02"
+[current_dispatches]
+other = "Güncel bildiriler & saha eleştirileri"
+[sort_reverse_chron]
+other = "Sıralama: yeniden eskiye"
+[all_articles]
+other = "Tüm yazılar ({{ . }})"
+[inspect_file]
+other = "Dosyayı incele"
+[dispatch_no]
+other = "Bildiri #{{ . }}"
+
+[dev_specs]
+other = "Geliştirici özellikleri"
+[dev_title]
+other = "Sıfır şişkinlik. Ham Markdown. Hugo yerlisi."
+[dev_body]
+other = "<strong>{{ . }}</strong> üzerindeki her bildiri hayata temiz YAML ön bilgili düz bir metin dosyası olarak başlar. Yamalanacak SQL veritabanı yok. Hantal sunucu sorguları yok. Yalnızca milisaniyeler içinde üretilip gezegenin her ucunda önbelleğe alınan anlamsal HTML."
+[dev_check_builds]
+other = "Anında derleme: {{ .Pages }} sayfa, Hugo {{ .Version }} ile üretildi"
+[dev_check_offline]
+other = "Çevrimdışı dayanıklılık: Lynx, w3m veya curl ile okunabilir"
+[dev_check_markdown]
+other = "Her sayfa <code>…/index.md</code> adresinde ham Markdown olarak da sunulur"
+[clone_repo]
+other = "Tema deposunu klonla"
+[yaml_front_matter]
+other = "YAML ön bilgi"
+[essay_follows]
+other = "# Deneme aşağıda düz UTF-8 olarak devam eder…"
+[engine_ext]
+other = "Motor: Hugo {{ .Version }}{{ if .Extended }} extended{{ end }}"
+[copy_front_matter]
+other = "Ön bilgiyi kopyala"
+[copied]
+other = "Kopyalandı!"
+[code_excerpt]
+other = "Kod alıntısı"
+
+[press_folio]
+other = "Basın folyosu"
+[built_with]
+other = "Hugo & Markdown ile yapıldı"
+[high_fidelity]
+other = "Yüksek sadakat, sıfır şişkinlik"
+[email_address]
+other = "E-posta adresi"
+[subscribe]
+other = "Abone ol"
+[categories]
+other = "Kategoriler"
+[channels]
+other = "Kanallar"
+[back_to_top]
+other = "Başa dön"
+
+[by]
+other = "Yazan"
+[words]
+one = "{{ . }} kelime"
+other = "{{ . }} kelime"
+[marginalia]
+other = "Kenar notları"
+[contents]
+other = "İçindekiler"
+[file]
+other = "Dosya"
+[published]
+other = "Yayın"
+[revised]
+other = "Güncelleme"
+[read_time]
+other = "Okuma"
+[min]
+other = "{{ . }} dk"
+[issue]
+other = "Sayı"
+[format]
+other = "Format"
+[format_md_html]
+other = "Markdown → HTML"
+[tags]
+other = "Etiketler"
+[raw_markdown]
+other = "Ham Markdown"
+[adjacent_dispatches]
+other = "Komşu bildiriler"
+[older_dispatch]
+other = "Önceki bildiri"
+[newer_dispatch]
+other = "Sonraki bildiri"
+
+[files]
+one = "{{ . }} dosya"
+other = "{{ . }} dosya"
+[reverse_chronological]
+other = "yeniden eskiye"
+[section]
+other = "Bölüm"
+[index]
+other = "Dizin"
+[tax_category]
+other = "Kategori"
+[tax_tag]
+other = "Etiket"
+[tax_categories]
+other = "kategoriler"
+[tax_tags]
+other = "etiketler"
+[all_terms]
+other = "Tüm {{ . }}"
+[index_intro]
+other = "Her bildiri tek bir kategoriye ve istediği kadar etikete dosyalanır. Bir çekmece seçin."
+[browse_by_tag]
+other = "Etikete göre gez"
+[browse_by_category]
+other = "Kategoriye göre gez"
+
+[mail_order]
+other = "Posta siparişi"
+[ships_in]
+other = "Kahverengi kraft zarflarla gönderilir"
+[sold_out]
+other = "Tükendi"
+[order_by_post]
+other = "Postayla sipariş ver"
+[order_subject]
+other = "Sipariş: {{ . }}"
+
+[error_404]
+other = "Hata // 404"
+[wrong_note]
+other = "Yanlış nota."
+[not_found_body]
+other = "Aradığınız sayfa bantta yok. Önemli olan bir sonraki nota: <a href=\"{{ .Home }}\">ana sayfaya dön</a> ya da <a href=\"{{ .Archive }}\">arşivi aç</a>."
+
+[count_categories]
+one = "{{ . }} kategori"
+other = "{{ . }} kategori"
+[count_tags]
+one = "{{ . }} etiket"
+other = "{{ . }} etiket"

@@ -1,0 +1,28 @@
+{{ define "main" }}
+{{- $catalog := index hugo.Data.zines site.Language.Lang }}
+<section class="wrap wrap--standard listing">
+  <header class="listing__head">
+    <div class="card__chips"><span class="sticker sticker--flat">{{ T "mail_order" }}</span><span class="label-sm">{{ T "ships_in" }}</span></div>
+    <h1 class="display-md">{{ .Title }}</h1>
+    {{- with .Description }}<p class="body-lg listing__desc">{{ . }}</p>{{ end }}
+  </header>
+  <div class="prose prose--wide">{{ .Content }}</div>
+  <div class="catalog">
+    {{- range $i, $z := $catalog.items }}
+    <article class="card catalog__item{{ if $z.soldout }} is-soldout{{ end }}">
+      <div class="card__top label-sm">
+        <span class="chip chip--{{ index (slice "a" "b" "c") (mod $i 3) }}">[{{ printf "%02d" (add $i 1) }}] {{ $z.kind }}</span>
+        {{- if $z.soldout }}<span class="sticker">{{ T "sold_out" }}</span>{{ else }}<span class="tag">{{ $z.price }}</span>{{ end }}
+      </div>
+      <h2 class="headline-md card__title">{{ $z.title }}</h2>
+      <p class="body-sm card__excerpt">{{ $z.desc }}</p>
+      <dl class="catalog__specs label-sm">{{ range $z.specs }}<div><dt>{{ .k }}</dt><dd>{{ .v }}</dd></div>{{ end }}</dl>
+      <div class="card__foot label-sm">
+        <span>{{ $z.edition }}</span>
+        {{- if not $z.soldout }}<a class="card__link" href="mailto:{{ site.Params.mailorder.email }}?subject={{ T "order_subject" $z.title | urlquery }}">{{ T "order_by_post" }} ↗</a>{{ end }}
+      </div>
+    </article>
+    {{- end }}
+  </div>
+</section>
+{{ end }}

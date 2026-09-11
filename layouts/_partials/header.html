@@ -1,0 +1,40 @@
+<header class="masthead" id="top">
+  <div class="wrap">
+    <div class="masthead__strip label-sm">
+      <div>
+        <span>{{ T "issue_no" site.Params.issue }}</span><span class="dot">•</span>
+        <span class="hide-sm">{{ T "dispatches_from" }}</span><span class="dot hide-sm">•</span>
+        <span>{{ T "est" site.Params.established }}</span><span class="dot hide-sm">•</span>
+        <span class="ink-signal hide-sm">{{ T "static_rss_ready" }}</span>
+      </div>
+      <div>
+        <span class="hide-md">{{ T "folio" site.Params.folio }}</span>
+        <span class="chip chip--amber chip--xs">{{ T "raw_unfiltered" }}</span>
+      </div>
+    </div>
+    <div class="masthead__row">
+      <a class="brand" href="{{ site.Home.RelPermalink }}" aria-label="{{ site.Title }} — {{ T "home" }}">
+        {{ partial "logo.html" . }}
+        <span class="brand__text">
+          <span class="brand__name">{{ site.Title }}</span>
+          <span class="brand__tag label-sm">{{ site.Params.tagline }}</span>
+        </span>
+      </a>
+      <nav class="nav" aria-label="{{ T "primary_nav" }}">
+        {{- $p := . }}
+        {{- range site.Menus.main }}
+        {{- $active := or ($p.IsMenuCurrent "main" .) ($p.HasMenuCurrent "main" .) }}
+        {{- $url := .URL }}
+        {{- if .Params.rss }}{{ with site.Home.OutputFormats.Get "rss" }}{{ $url = .RelPermalink }}{{ end }}{{ end }}
+        <a class="nav__link{{ with .Params.class }} {{ . }}{{ end }}" href="{{ $url }}"{{ if $active }} aria-current="page"{{ end }}>{{ .Name }}</a>
+        {{- end }}
+      </nav>
+      <div class="masthead__tools">
+        {{ partial "lang-switch.html" . }}
+        <button class="theme-toggle" type="button" data-theme-toggle aria-label="{{ T "toggle_theme" }}" title="{{ T "invert" }}">
+          <span aria-hidden="true">◐</span>
+        </button>
+      </div>
+    </div>
+  </div>
+</header>

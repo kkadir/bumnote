@@ -1,0 +1,208 @@
+[skip_to_content]
+other = "Skip to content"
+[home]
+other = "home"
+[language]
+other = "Language"
+[primary_nav]
+other = "Primary"
+[issue_no]
+other = "Issue No. {{ . }}"
+[dispatches_from]
+other = "Dispatches from the underground"
+[est]
+other = "Est. {{ . }}"
+[static_rss_ready]
+other = "Static RSS ready"
+[folio]
+other = "Folio: {{ . }}"
+[raw_unfiltered]
+other = "Raw • Unfiltered"
+[toggle_theme]
+other = "Toggle inverted reading mode"
+[invert]
+other = "Invert"
+
+[special_folio]
+other = "Special folio"
+[issue_rotation]
+other = "Issue {{ .Issue }} / {{ .Name }}"
+[frequency]
+other = "Frequency: {{ . }}"
+[static_markdown]
+other = "100% static Markdown"
+[files_label]
+other = "Files:"
+[flat_md]
+other = "{{ . }} flat .md"
+[no_trackers]
+other = "No trackers"
+[engine]
+other = "Engine: Hugo {{ . }}"
+
+[essay_issue]
+other = "Essay // Issue #{{ . }}"
+[note]
+other = "Note"
+[note_dispatch]
+other = "Note // #{{ . }}"
+[min_read]
+one = "{{ . }} min read"
+other = "{{ . }} min read"
+[read_long_form]
+other = "Read long-form article"
+[filed_under]
+other = "Filed under:"
+[recent_spins]
+other = "Recent spins"
+[on_rotation]
+other = "On rotation"
+[format_analog]
+other = "Format: analog only"
+[index_taxonomy]
+other = "Index taxonomy:"
+[all_folios]
+other = "All folios"
+[sec_02]
+other = "Sec. 02"
+[current_dispatches]
+other = "Current dispatches & field critiques"
+[sort_reverse_chron]
+other = "Sort: reverse chronological"
+[all_articles]
+other = "All articles ({{ . }})"
+[inspect_file]
+other = "Inspect file"
+[dispatch_no]
+other = "Dispatch #{{ . }}"
+
+[dev_specs]
+other = "Developer specifications"
+[dev_title]
+other = "Zero bloat. Raw Markdown. Hugo native."
+[dev_body]
+other = "Every dispatch on <strong>{{ . }}</strong> starts life as a flat text file with clean YAML front matter. No SQL databases to patch. No sluggish server queries. Just semantic HTML generated in milliseconds and cached across the planetary edge."
+[dev_check_builds]
+other = "Instant builds: {{ .Pages }} pages rendered by Hugo {{ .Version }}"
+[dev_check_offline]
+other = "Offline resilience: readable in Lynx, w3m, or curl"
+[dev_check_markdown]
+other = "Every page also served as raw Markdown at <code>…/index.md</code>"
+[clone_repo]
+other = "Clone theme repository"
+[yaml_front_matter]
+other = "YAML front matter"
+[essay_follows]
+other = "# The essay follows below in plain UTF-8…"
+[engine_ext]
+other = "Engine: Hugo {{ .Version }}{{ if .Extended }} extended{{ end }}"
+[copy_front_matter]
+other = "Copy front matter"
+[copied]
+other = "Copied!"
+[code_excerpt]
+other = "Code excerpt"
+
+[press_folio]
+other = "Press folio"
+[built_with]
+other = "Built with Hugo & Markdown"
+[high_fidelity]
+other = "High fidelity, zero bloat"
+[email_address]
+other = "Email address"
+[subscribe]
+other = "Subscribe"
+[categories]
+other = "Categories"
+[channels]
+other = "Channels"
+[back_to_top]
+other = "Back to top"
+
+[by]
+other = "By"
+[words]
+one = "{{ . }} word"
+other = "{{ . }} words"
+[marginalia]
+other = "Marginalia"
+[contents]
+other = "Contents"
+[file]
+other = "File"
+[published]
+other = "Published"
+[revised]
+other = "Revised"
+[read_time]
+other = "Read time"
+[min]
+other = "{{ . }} min"
+[issue]
+other = "Issue"
+[format]
+other = "Format"
+[format_md_html]
+other = "Markdown → HTML"
+[tags]
+other = "Tags"
+[raw_markdown]
+other = "Raw Markdown"
+[adjacent_dispatches]
+other = "Adjacent dispatches"
+[older_dispatch]
+other = "Older dispatch"
+[newer_dispatch]
+other = "Newer dispatch"
+
+[files]
+one = "{{ . }} file"
+other = "{{ . }} files"
+[reverse_chronological]
+other = "reverse chronological"
+[section]
+other = "Section"
+[index]
+other = "Index"
+[tax_category]
+other = "Category"
+[tax_tag]
+other = "Tag"
+[tax_categories]
+other = "categories"
+[tax_tags]
+other = "tags"
+[all_terms]
+other = "All {{ . }}"
+[index_intro]
+other = "Every dispatch is filed under one category and any number of tags. Pick a drawer."
+[browse_by_tag]
+other = "Browse by tag"
+[browse_by_category]
+other = "Browse by category"
+
+[mail_order]
+other = "Mail order"
+[ships_in]
+other = "Ships in brown craft mailers"
+[sold_out]
+other = "Sold out"
+[order_by_post]
+other = "Order by post"
+[order_subject]
+other = "Order: {{ . }}"
+
+[error_404]
+other = "Error // 404"
+[wrong_note]
+other = "Wrong note."
+[not_found_body]
+other = "The page you asked for isn’t on the tape. It’s the next note that counts: <a href=\"{{ .Home }}\">back to the front page</a> or <a href=\"{{ .Archive }}\">open the archive</a>."
+
+[count_categories]
+one = "{{ . }} category"
+other = "{{ . }} categories"
+[count_tags]
+one = "{{ . }} tag"
+other = "{{ . }} tags"

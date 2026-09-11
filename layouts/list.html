@@ -1,0 +1,34 @@
+{{ define "main" }}
+{{- $pages := .RegularPages }}
+<section class="wrap wrap--standard listing">
+  <header class="listing__head">
+    <div class="card__chips">
+      <span class="sticker sticker--flat">{{ if eq .Kind "term" }}{{ T (printf "tax_%s" .Data.Singular) }}{{ else }}{{ .Params.sectionLabel | default (T "section") }}{{ end }}</span>
+      <span class="label-sm">{{ T "files" (len $pages) }} • {{ T "reverse_chronological" }}</span>
+    </div>
+    <h1 class="display-md">{{ .Title }}</h1>
+    {{- with .Description }}<p class="body-lg listing__desc">{{ . }}</p>{{ end }}
+    {{- with .Content }}<div class="prose prose--wide">{{ . }}</div>{{ end }}
+  </header>
+  <ol class="rows">
+    {{- range $i, $p := $pages }}
+    <li class="row">
+      <span class="row__idx label-lg">[{{ printf "%02d" (add $i 1) }}]</span>
+      <div class="row__main">
+        <h2 class="headline-md row__title"><a href="{{ $p.RelPermalink }}">{{ $p.Title }}</a></h2>
+        {{- with or $p.Description ($p.Summary | plainify) }}<p class="body-sm row__desc">{{ . }}</p>{{ end }}
+        {{- with $p.GetTerms "categories" }}<div class="row__tags">{{ range . }}<a class="tag" href="{{ .RelPermalink }}">{{ .LinkTitle }}</a>{{ end }}</div>{{ end }}
+      </div>
+      <div class="row__meta label-sm">
+        <time datetime="{{ $p.Date.Format "2006-01-02" }}">{{ $p.Date | time.Format ":date_medium" }}</time>
+        <span>{{ T "min" $p.ReadingTime }}</span>
+        {{- with $p.Params.dispatch }}<span>#{{ . }}</span>{{ end }}
+      </div>
+    </li>
+    {{- end }}
+  </ol>
+  {{- if eq .Kind "term" }}
+  <p class="label-sm listing__alt"><a href="{{ .Parent.RelPermalink }}">← {{ T "all_terms" (T (printf "tax_%s" .Data.Plural)) }}</a></p>
+  {{- end }}
+</section>
+{{ end }}

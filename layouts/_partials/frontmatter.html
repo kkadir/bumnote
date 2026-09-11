@@ -1,0 +1,23 @@
+{{- with .File -}}
+{{- $rel := strings.TrimPrefix (printf "%s/" hugo.WorkingDir) .Filename -}}
+{{- $raw := os.ReadFile $rel -}}
+{{- $m := findRE `(?s)\A---\r?\n.*?\r?\n---` $raw 1 -}}
+{{- with $m -}}
+{{- $yaml := trim (index . 0) "-\r\n" -}}
+<span class="fm-fence">---</span>
+{{ range split $yaml "\n" -}}
+{{- $line := trim . "\r" -}}
+{{- $keys := findRE `^\s*[A-Za-z_][A-Za-z0-9_]*:` $line 1 -}}
+{{- if $keys -}}
+{{- $key := index $keys 0 -}}
+<span class="fm-key">{{ $key }}</span>{{ strings.TrimPrefix $key $line }}
+{{ else if findRE `^\s*- ` $line 1 -}}
+<span class="fm-item">{{ $line }}</span>
+{{ else -}}
+{{ $line }}
+{{ end -}}
+{{- end -}}
+<span class="fm-fence">---</span>
+<span class="fm-comment">{{ T "essay_follows" }}</span>
+{{- end -}}
+{{- end -}}

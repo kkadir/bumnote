@@ -1,0 +1,65 @@
+{{ define "main" }}
+<article class="article">
+  <header class="article__head wrap wrap--standard">
+    {{ partial "cover.html" . }}
+    <div class="article__ribbon">
+      <div class="card__chips">
+        {{- if eq .Section "posts" }}<span class="sticker">{{ T "essay_issue" (.Params.issue | default site.Params.issue) }}</span>
+        {{- else if eq .Section "notes" }}<span class="sticker">{{ with .Params.dispatch }}{{ T "note_dispatch" . }}{{ else }}{{ T "note" }}{{ end }}</span>
+        {{- else }}<span class="sticker sticker--flat">{{ site.Title }}</span>{{ end }}
+        {{- with .GetTerms "categories" }}{{ range . }}<a class="chip chip--amber" href="{{ .RelPermalink }}">{{ .LinkTitle }}</a>{{ end }}{{ end }}
+        {{- with .Params.kicker }}<span class="tag ink-signal">{{ . }}</span>{{ end }}
+      </div>
+      {{- if not .Date.IsZero }}{{ partial "meta.html" . }}{{ end }}
+    </div>
+    <h1 class="display-lg article__title">{{ partial "title-hl.html" . }}</h1>
+    {{- with .Description }}<p class="body-lg article__standfirst">{{ . }}</p>{{ end }}
+    <div class="article__byline label-sm">
+      {{- with .Params.author }}<span>{{ T "by" }} <span class="ink">{{ . }}</span></span><span class="dot">•</span>{{ end }}
+      <span>{{ T "words" .WordCount }}</span>
+      {{- with .Params.dispatch }}<span class="dot">•</span><span>{{ T "dispatch_no" . }}</span>{{ end }}
+      {{- with .File }}<span class="dot hide-sm">•</span><span class="hide-sm">{{ strings.TrimPrefix (printf "%s/" hugo.WorkingDir) .Filename }}</span>{{ end }}
+    </div>
+  </header>
+
+  <div class="article__body wrap wrap--standard">
+    <div class="prose">
+      {{ .Content }}
+    </div>
+    <aside class="rail label-sm" aria-label="{{ T "marginalia" }}">
+      {{- with .TableOfContents }}{{ if gt (len .) 60 }}
+      <div class="rail__block"><h2 class="label-md rail__h">{{ T "contents" }}</h2>{{ . }}</div>
+      {{- end }}{{ end }}
+      <div class="rail__block">
+        <h2 class="label-md rail__h">{{ T "file" }}</h2>
+        <dl class="rail__dl">
+          {{- if not .Date.IsZero }}<dt>{{ T "published" }}</dt><dd>{{ .Date | time.Format ":date_medium" }}</dd>{{ end }}
+          {{- if and (not .Lastmod.IsZero) (ne (.Lastmod.Format "2006-01-02") (.Date.Format "2006-01-02")) }}<dt>{{ T "revised" }}</dt><dd>{{ .Lastmod | time.Format ":date_medium" }}</dd>{{ end }}
+          <dt>{{ T "read_time" }}</dt><dd>{{ T "min" .ReadingTime }}</dd>
+          {{- with .Params.issue }}<dt>{{ T "issue" }}</dt><dd>{{ . }}</dd>{{ end }}
+          <dt>{{ T "format" }}</dt><dd>{{ T "format_md_html" }}</dd>
+        </dl>
+      </div>
+      {{- with .GetTerms "tags" }}
+      <div class="rail__block"><h2 class="label-md rail__h">{{ T "tags" }}</h2><div class="rail__tags">{{ range . }}<a class="tag" href="{{ .RelPermalink }}">#{{ .LinkTitle }}</a>{{ end }}</div></div>
+      {{- end }}
+      {{- with .OutputFormats.Get "markdown" }}
+      <div class="rail__block"><a class="btn btn--secondary btn--sm" href="{{ .RelPermalink }}">{{ T "raw_markdown" }} ↓</a></div>
+      {{- end }}
+    </aside>
+  </div>
+
+  {{- if and .Section (or .PrevInSection .NextInSection) }}
+  <footer class="article__foot wrap wrap--standard">
+    <nav class="pager" aria-label="{{ T "adjacent_dispatches" }}">
+      {{- with .PrevInSection }}
+      <a class="pager__item pager__item--prev" href="{{ .RelPermalink }}"><span class="label-sm">← {{ T "older_dispatch" }}</span><span class="headline-sm">{{ .Title }}</span></a>
+      {{- else }}<span></span>{{ end }}
+      {{- with .NextInSection }}
+      <a class="pager__item pager__item--next" href="{{ .RelPermalink }}"><span class="label-sm">{{ T "newer_dispatch" }} →</span><span class="headline-sm">{{ .Title }}</span></a>
+      {{- end }}
+    </nav>
+  </footer>
+  {{- end }}
+</article>
+{{ end }}
